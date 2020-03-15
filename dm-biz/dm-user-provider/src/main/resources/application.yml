@@ -1,0 +1,13 @@
+server:
+  port: 9220
+spring:
+  application:
+    name: dm-user-provider
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: ${spring.cloud.client.ipAddress}
+    instance-id: ${spring.cloud.client.ipAddress}:${spring.application.name}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://root:123456@localhost:7776/eureka/

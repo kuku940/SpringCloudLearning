@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>SpringCloudLearning</artifactId>
+        <groupId>cn.xiaoyu</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>dm-biz</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>dm-user-provider</module>
+        <module>dm-user-consumer</module>
+        <module>dm-base-consumer</module>
+        <module>dm-base-provider</module>
+        <module>dm-order-consumer</module>
+        <module>dm-order-provider</module>
+        <module>dm-item-consumer</module>
+        <module>dm-item-provider</module>
+        <module>dm-pay-consumer</module>
+        <module>dm-pay-provider</module>
+        <module>dm-scheduler-consumer</module>
+        <module>dm-scheduler-provider</module>
+    </modules>
+</project>

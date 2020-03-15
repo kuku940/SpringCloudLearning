@@ -15,12 +15,9 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>dm-gateway-zuul</module>
-        <module>dm-eureka-server</module>
-        <module>dm-config-server</module>
         <module>dm-common</module>
-        <module>dm-user-provider</module>
-        <module>dm-user-consumer</module>
+        <module>dm-env</module>
+        <module>dm-biz</module>
     </modules>
 
     <properties>

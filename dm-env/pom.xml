@@ -9,14 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dm-common</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>dm-env</artifactId>
     <packaging>pom</packaging>
+
     <modules>
-        <module>dm-common-dto</module>
-        <module>dm-common-module</module>
-        <module>dm-common-dao</module>
-        <module>dm-common-client</module>
-        <module>dm-common-utils</module>
+        <module>dm-gateway-zuul</module>
+        <module>dm-eureka-server</module>
+        <module>dm-config-server</module>
     </modules>
+
 </project>

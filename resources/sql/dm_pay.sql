@@ -1,22 +1,7 @@
-/*
-Navicat MySQL Data Transfer
-
-Source Server         : 151
-Source Server Version : 50638
-Source Host           : 192.168.9.151:3306
-Source Database       : dm_pay
-
-Target Server Type    : MYSQL
-Target Server Version : 50638
-File Encoding         : 65001
-
-Date: 2018-10-26 11:42:15
-*/
-
 SET FOREIGN_KEY_CHECKS=0;
 
 CREATE DATABASE IF NOT EXISTS `dm_pay`;
-USE `dm_pay`
+USE `dm_pay`;
 
 -- ----------------------------
 -- Table structure for dm_trade
