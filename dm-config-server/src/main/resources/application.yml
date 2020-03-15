@@ -1,8 +1,16 @@
+server:
+  port: 7900
 spring:
   application:
-    name: dm-gateway-zuul
-server:
-  port: 7600
+    name: dm-config-provider
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/kuku940/SpringCloudLearning.git
+          username:
+          password:
+          search-paths:
 eureka:
   instance:
     prefer-ip-address: true
@@ -11,10 +19,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://root:123456@localhost:7776/eureka/
-zuul:
-  #
-  routes:
-    dm-user-consumer: /user/**
-  LogFilter:  # close PreFilter
-    pre:
-      disable: true

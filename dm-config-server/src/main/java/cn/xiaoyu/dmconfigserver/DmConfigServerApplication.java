@@ -1,16 +1,17 @@
-package cn.xiaoyu.dmgatewayzuul;
+package cn.xiaoyu.dmconfigserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+import org.springframework.cloud.config.server.EnableConfigServer;
 
 @SpringBootApplication
-@EnableZuulProxy
 @EnableDiscoveryClient
-public class DmGatewayZuulApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(DmGatewayZuulApplication.class, args);
-    }
-}
+@EnableConfigServer
+public class DmConfigServerApplication {
 
+    public static void main(String[] args) {
+        SpringApplication.run(DmConfigServerApplication.class, args);
+    }
+
+}

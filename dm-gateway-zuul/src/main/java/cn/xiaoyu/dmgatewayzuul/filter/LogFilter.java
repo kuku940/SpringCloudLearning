@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * 日志过滤器 未生效
+ * 日志过滤器
  */
 @Component
 public class LogFilter extends ZuulFilter {
