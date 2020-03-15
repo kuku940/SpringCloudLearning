@@ -1,0 +1,14 @@
+#start dm-user-provider twice, on port 8081,8082, add server.port to Configuration
+#server:
+#  port: 8080
+spring:
+  application:
+    name: dm-user-provider
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: ${spring.cloud.client.ipAddress}
+    instance-id: ${spring.cloud.client.ipAddress}:${spring.application.name}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://root:123456@localhost:7776/eureka/

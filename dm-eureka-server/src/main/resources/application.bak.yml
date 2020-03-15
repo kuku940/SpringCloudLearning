@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: eureka-server-cluster
+---
+spring:
+  profiles: eureka1
+server:
+  port: 7775
+eureka:
+  instance:
+    hostname: eureka1
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+  client:
+    service-url:
+      default-zone: http://root:123456@eureka2:7776/eureka/
+security:
+  basic:
+    enabled: true
+  user:
+    name: root
+    password: 123456
+
+---
+spring:
+  profiles: eureka2
+server:
+  port: 7776
+eureka:
+  instance:
+    hostname: eureka2
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+  client:
+    service-url:
+      default-zone: http://root:123456@eureka1:7775/eureka/
+security:
+  basic:
+    enabled: true
+  user:
+    name: root
+    password: 123456

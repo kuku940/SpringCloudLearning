@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: dm-gateway-zuul
+server:
+  port: 7600
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: ${spring.cloud.client.ipAddress}
+    instance-id: ${spring.cloud.client.ipAddress}:${spring.application.name}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://root:123456@localhost:7776/eureka/
+zuul:
+  #
+  routes:
+    dm-user-consumer: /user/**
+  PreFilter:  # close PreFilter
+    pre:
+      disable: true
