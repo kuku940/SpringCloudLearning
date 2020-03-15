@@ -8,9 +8,10 @@ spring:
       server:
         git:
           uri: https://github.com/kuku940/SpringCloudLearning.git
-          username:
-          password:
-          search-paths:
+          username: ${github.username}
+          password: ${github.password}
+          search-paths: /dm-config-server/src/main/resources/config/
+          #default-label: master
 eureka:
   instance:
     prefer-ip-address: true
