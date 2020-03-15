@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: dm-gateway-zuul
+# config-server url
+# param: application name + profile version + branch
+  cloud:
+    config:
+      uri: http://localhost:7900
+      profile: prod
+      lable: master

@@ -1,6 +1,4 @@
-spring:
-  application:
-    name: dm-gateway-zuul
+# spring.application.name moved to boostrap.yml file
 server:
   port: 7600
 eureka:
@@ -12,9 +10,12 @@ eureka:
     service-url:
       defaultZone: http://root:123456@localhost:7776/eureka/
 zuul:
-  #
   routes:
     dm-user-consumer: /user/**
-  LogFilter:  # close PreFilter
+  LogFilter:  # make LogFilter unavailable
     pre:
       disable: true
+# close security for RefreshCode
+management:
+  security:
+    enabled: false
