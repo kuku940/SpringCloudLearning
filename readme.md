@@ -1,4 +1,3 @@
-
 ## 技术栈
 * Zuul - 网关
 * Config - 配置中心 -> Git
@@ -8,4 +7,4 @@
 * Hystrix - 容错限流
 * Sleth - 链式调用
 
-
+参考[SpringCloud架构设计](./resources/SpringCloud架构设计.md)
