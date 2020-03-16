@@ -10,18 +10,17 @@ import java.util.Map;
 @Mapper
 public interface DmItemCommentMapper {
 
-    public DmItemComment getDmItemCommentById(@Param(value = "id") Long id) throws Exception;
+    DmItemComment getDmItemCommentById(@Param(value = "id") Long id);
 
-    public List<DmItemComment> getDmItemCommentListByMap(Map<String, Object> param) throws Exception;
+    List<DmItemComment> getDmItemCommentListByMap(Map<String, Object> param);
 
-    public Integer getDmItemCommentCountByMap(Map<String, Object> param) throws Exception;
+    Integer getDmItemCommentCountByMap(Map<String, Object> param);
 
-    public Integer insertDmItemComment(DmItemComment dmItemComment) throws Exception;
+    Integer insertDmItemComment(DmItemComment dmItemComment);
 
-    public Integer updateDmItemComment(DmItemComment dmItemComment) throws Exception;
+    Integer updateDmItemComment(DmItemComment dmItemComment);
 
-    public Integer deleteDmItemCommentById(@Param(value = "id") Long id) throws Exception;
+    Integer deleteDmItemCommentById(@Param(value = "id") Long id);
 
-    public Integer batchDeleteDmItemComment(Map<String, List<String>> params);
-
+    Integer batchDeleteDmItemComment(Map<String, List<String>> params);
 }

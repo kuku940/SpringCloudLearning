@@ -1,9 +1,11 @@
 package cn.xiaoyu.common.module.pojo;
+
 import java.io.Serializable;
 import java.util.Date;
+
 /***
-*   用户表
-*/
+ *   用户表
+ */
 public class DmUser implements Serializable {
     //主键
     private Long id;
@@ -29,77 +31,101 @@ public class DmUser implements Serializable {
     private Date createdTime;
     //修改时间
     private Date updatedTime;
+
     //get set 方法
-    public void setId (Long  id){
-        this.id=id;
+    public void setId(Long id) {
+        this.id = id;
     }
-    public  Long getId(){
+
+    public Long getId() {
         return this.id;
     }
-    public void setPhone (String  phone){
-        this.phone=phone;
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
-    public  String getPhone(){
+
+    public String getPhone() {
         return this.phone;
     }
-    public void setPassword (String  password){
-        this.password=password;
+
+    public void setPassword(String password) {
+        this.password = password;
     }
-    public  String getPassword(){
+
+    public String getPassword() {
         return this.password;
     }
-    public void setWxUserId (String  wxUserId){
-        this.wxUserId=wxUserId;
+
+    public void setWxUserId(String wxUserId) {
+        this.wxUserId = wxUserId;
     }
-    public  String getWxUserId(){
+
+    public String getWxUserId() {
         return this.wxUserId;
     }
-    public void setRealName (String  realName){
-        this.realName=realName;
+
+    public void setRealName(String realName) {
+        this.realName = realName;
     }
-    public  String getRealName(){
+
+    public String getRealName() {
         return this.realName;
     }
-    public void setNickName (String  nickName){
-        this.nickName=nickName;
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
-    public  String getNickName(){
+
+    public String getNickName() {
         return this.nickName;
     }
-    public void setSex (Integer  sex){
-        this.sex=sex;
+
+    public void setSex(Integer sex) {
+        this.sex = sex;
     }
-    public  Integer getSex(){
+
+    public Integer getSex() {
         return this.sex;
     }
-    public void setHobby (String  hobby){
-        this.hobby=hobby;
+
+    public void setHobby(String hobby) {
+        this.hobby = hobby;
     }
-    public  String getHobby(){
+
+    public String getHobby() {
         return this.hobby;
     }
-    public void setIdCard (String  idCard){
-        this.idCard=idCard;
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
     }
-    public  String getIdCard(){
+
+    public String getIdCard() {
         return this.idCard;
     }
-    public void setBirthday (Date  birthday){
-        this.birthday=birthday;
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
-    public  Date getBirthday(){
+
+    public Date getBirthday() {
         return this.birthday;
     }
-    public void setCreatedTime (Date  createdTime){
-        this.createdTime=createdTime;
+
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
     }
-    public  Date getCreatedTime(){
+
+    public Date getCreatedTime() {
         return this.createdTime;
     }
-    public void setUpdatedTime (Date  updatedTime){
-        this.updatedTime=updatedTime;
+
+    public void setUpdatedTime(Date updatedTime) {
+        this.updatedTime = updatedTime;
     }
-    public  Date getUpdatedTime(){
+
+    public Date getUpdatedTime() {
         return this.updatedTime;
     }
 }

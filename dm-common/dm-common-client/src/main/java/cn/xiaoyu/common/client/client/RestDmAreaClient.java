@@ -3,11 +3,11 @@ package cn.xiaoyu.common.client.client;
 
 import cn.xiaoyu.common.client.config.DmConfiguration;
 import cn.xiaoyu.common.client.fallback.DmAreaClientFallBack;
+import cn.xiaoyu.common.exception.BizException;
 import cn.xiaoyu.common.module.pojo.DmArea;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -16,18 +16,18 @@ import java.util.Map;
 @FeignClient(name = "dm-item-provider", configuration = DmConfiguration.class, fallback = DmAreaClientFallBack.class)
 public interface RestDmAreaClient {
 
-    @RequestMapping(value = "/getDmAreaById", method = RequestMethod.POST)
-    public DmArea getDmAreaById(@RequestParam("id") Long id) throws Exception;
+    @PostMapping(value = "/getDmAreaById")
+    public DmArea getDmAreaById(@RequestParam("id") Long id) throws BizException;
 
-    @RequestMapping(value = "/getDmAreaListByMap", method = RequestMethod.POST)
-    public List<DmArea> getDmAreaListByMap(@RequestParam Map<String, Object> param) throws Exception;
+    @PostMapping(value = "/getDmAreaListByMap")
+    public List<DmArea> getDmAreaListByMap(@RequestParam Map<String, Object> param) throws BizException;
 
-    @RequestMapping(value = "/getDmAreaCountByMap", method = RequestMethod.POST)
-    public Integer getDmAreaCountByMap(@RequestParam Map<String, Object> param) throws Exception;
+    @PostMapping(value = "/getDmAreaCountByMap")
+    public Integer getDmAreaCountByMap(@RequestParam Map<String, Object> param) throws BizException;
 
-    @RequestMapping(value = "/qdtxAddDmArea", method = RequestMethod.POST)
-    public Integer qdtxAddDmArea(@RequestBody DmArea dmArea) throws Exception;
+    @PostMapping(value = "/qdtxAddDmArea")
+    public Integer qdtxAddDmArea(@RequestBody DmArea dmArea) throws BizException;
 
-    @RequestMapping(value = "/qdtxModifyDmArea", method = RequestMethod.POST)
-    public Integer qdtxModifyDmArea(@RequestBody DmArea dmArea) throws Exception;
+    @PostMapping(value = "/qdtxModifyDmArea")
+    public Integer qdtxModifyDmArea(@RequestBody DmArea dmArea) throws BizException;
 }

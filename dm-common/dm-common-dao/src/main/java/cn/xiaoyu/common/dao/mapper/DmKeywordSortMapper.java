@@ -10,18 +10,18 @@ import java.util.Map;
 @Mapper
 public interface DmKeywordSortMapper {
 
-    public DmKeywordSort getDmKeywordSortById(@Param(value = "id") Long id) throws Exception;
+    DmKeywordSort getDmKeywordSortById(@Param(value = "id") Long id);
 
-    public List<DmKeywordSort> getDmKeywordSortListByMap(Map<String, Object> param) throws Exception;
+    List<DmKeywordSort> getDmKeywordSortListByMap(Map<String, Object> param);
 
-    public Integer getDmKeywordSortCountByMap(Map<String, Object> param) throws Exception;
+    Integer getDmKeywordSortCountByMap(Map<String, Object> param);
 
-    public Integer insertDmKeywordSort(DmKeywordSort dmKeywordSort) throws Exception;
+    Integer insertDmKeywordSort(DmKeywordSort dmKeywordSort);
 
-    public Integer updateDmKeywordSort(DmKeywordSort dmKeywordSort) throws Exception;
+    Integer updateDmKeywordSort(DmKeywordSort dmKeywordSort);
 
-    public Integer deleteDmKeywordSortById(@Param(value = "id") Long id) throws Exception;
+    Integer deleteDmKeywordSortById(@Param(value = "id") Long id);
 
-    public Integer batchDeleteDmKeywordSort(Map<String, List<String>> params);
+    Integer batchDeleteDmKeywordSort(Map<String, List<String>> params);
 
 }

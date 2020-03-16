@@ -10,18 +10,18 @@ import java.util.Map;
 @Mapper
 public interface DmCinemaMapper {
 
-    public DmCinema getDmCinemaById(@Param(value = "id") Long id) throws Exception;
+    DmCinema getDmCinemaById(@Param(value = "id") Long id);
 
-    public List<DmCinema> getDmCinemaListByMap(Map<String, Object> param) throws Exception;
+    List<DmCinema> getDmCinemaListByMap(Map<String, Object> param);
 
-    public Integer getDmCinemaCountByMap(Map<String, Object> param) throws Exception;
+    Integer getDmCinemaCountByMap(Map<String, Object> param);
 
-    public Integer insertDmCinema(DmCinema dmCinema) throws Exception;
+    Integer insertDmCinema(DmCinema dmCinema);
 
-    public Integer updateDmCinema(DmCinema dmCinema) throws Exception;
+    Integer updateDmCinema(DmCinema dmCinema);
 
-    public Integer deleteDmCinemaById(@Param(value = "id") Long id) throws Exception;
+    Integer deleteDmCinemaById(@Param(value = "id") Long id);
 
-    public Integer batchDeleteDmCinema(Map<String, List<String>> params);
+    Integer batchDeleteDmCinema(Map<String, List<String>> params);
 
 }

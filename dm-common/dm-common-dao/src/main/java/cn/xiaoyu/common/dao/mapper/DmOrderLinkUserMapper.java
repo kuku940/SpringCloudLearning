@@ -10,18 +10,18 @@ import java.util.Map;
 @Mapper
 public interface DmOrderLinkUserMapper {
 
-    public DmOrderLinkUser getDmOrderLinkUserById(@Param(value = "id") Long id) throws Exception;
+    DmOrderLinkUser getDmOrderLinkUserById(@Param(value = "id") Long id);
 
-    public List<DmOrderLinkUser> getDmOrderLinkUserListByMap(Map<String, Object> param) throws Exception;
+    List<DmOrderLinkUser> getDmOrderLinkUserListByMap(Map<String, Object> param);
 
-    public Integer getDmOrderLinkUserCountByMap(Map<String, Object> param) throws Exception;
+    Integer getDmOrderLinkUserCountByMap(Map<String, Object> param);
 
-    public Integer insertDmOrderLinkUser(DmOrderLinkUser dmOrderLinkUser) throws Exception;
+    Integer insertDmOrderLinkUser(DmOrderLinkUser dmOrderLinkUser);
 
-    public Integer updateDmOrderLinkUser(DmOrderLinkUser dmOrderLinkUser) throws Exception;
+    Integer updateDmOrderLinkUser(DmOrderLinkUser dmOrderLinkUser);
 
-    public Integer deleteDmOrderLinkUserById(@Param(value = "id") Long id) throws Exception;
+    Integer deleteDmOrderLinkUserById(@Param(value = "id") Long id);
 
-    public Integer batchDeleteDmOrderLinkUser(Map<String, List<String>> params);
+    Integer batchDeleteDmOrderLinkUser(Map<String, List<String>> params);
 
 }

@@ -10,18 +10,18 @@ import java.util.Map;
 @Mapper
 public interface DmSchedulerSeatMapper {
 
-    public DmSchedulerSeat getDmSchedulerSeatById(@Param(value = "id") Long id) throws Exception;
+    DmSchedulerSeat getDmSchedulerSeatById(@Param(value = "id") Long id);
 
-    public List<DmSchedulerSeat> getDmSchedulerSeatListByMap(Map<String, Object> param) throws Exception;
+    List<DmSchedulerSeat> getDmSchedulerSeatListByMap(Map<String, Object> param);
 
-    public Integer getDmSchedulerSeatCountByMap(Map<String, Object> param) throws Exception;
+    Integer getDmSchedulerSeatCountByMap(Map<String, Object> param);
 
-    public Integer insertDmSchedulerSeat(DmSchedulerSeat dmSchedulerSeat) throws Exception;
+    Integer insertDmSchedulerSeat(DmSchedulerSeat dmSchedulerSeat);
 
-    public Integer updateDmSchedulerSeat(DmSchedulerSeat dmSchedulerSeat) throws Exception;
+    Integer updateDmSchedulerSeat(DmSchedulerSeat dmSchedulerSeat);
 
-    public Integer deleteDmSchedulerSeatById(@Param(value = "id") Long id) throws Exception;
+    Integer deleteDmSchedulerSeatById(@Param(value = "id") Long id);
 
-    public Integer batchDeleteDmSchedulerSeat(Map<String, List<String>> params);
+    Integer batchDeleteDmSchedulerSeat(Map<String, List<String>> params);
 
 }

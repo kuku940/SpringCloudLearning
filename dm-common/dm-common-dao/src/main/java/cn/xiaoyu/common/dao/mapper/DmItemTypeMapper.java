@@ -10,18 +10,17 @@ import java.util.Map;
 @Mapper
 public interface DmItemTypeMapper {
 
-    public DmItemType getDmItemTypeById(@Param(value = "id") Long id) throws Exception;
+    DmItemType getDmItemTypeById(@Param(value = "id") Long id);
 
-    public List<DmItemType> getDmItemTypeListByMap(Map<String, Object> param) throws Exception;
+    List<DmItemType> getDmItemTypeListByMap(Map<String, Object> param);
 
-    public Integer getDmItemTypeCountByMap(Map<String, Object> param) throws Exception;
+    Integer getDmItemTypeCountByMap(Map<String, Object> param);
 
-    public Integer insertDmItemType(DmItemType dmItemType) throws Exception;
+    Integer insertDmItemType(DmItemType dmItemType);
 
-    public Integer updateDmItemType(DmItemType dmItemType) throws Exception;
+    Integer updateDmItemType(DmItemType dmItemType);
 
-    public Integer deleteDmItemTypeById(@Param(value = "id") Long id) throws Exception;
+    Integer deleteDmItemTypeById(@Param(value = "id") Long id);
 
-    public Integer batchDeleteDmItemType(Map<String, List<String>> params);
-
+    Integer batchDeleteDmItemType(Map<String, List<String>> params);
 }

@@ -10,18 +10,18 @@ import java.util.Map;
 @Mapper
 public interface DmTradeMapper {
 
-    public DmTrade getDmTradeById(@Param(value = "id") Long id) throws Exception;
+    DmTrade getDmTradeById(@Param(value = "id") Long id);
 
-    public List<DmTrade> getDmTradeListByMap(Map<String, Object> param) throws Exception;
+    List<DmTrade> getDmTradeListByMap(Map<String, Object> param);
 
-    public Integer getDmTradeCountByMap(Map<String, Object> param) throws Exception;
+    Integer getDmTradeCountByMap(Map<String, Object> param);
 
-    public Integer insertDmTrade(DmTrade dmTrade) throws Exception;
+    Integer insertDmTrade(DmTrade dmTrade);
 
-    public Integer updateDmTrade(DmTrade dmTrade) throws Exception;
+    Integer updateDmTrade(DmTrade dmTrade);
 
-    public Integer deleteDmTradeById(@Param(value = "id") Long id) throws Exception;
+    Integer deleteDmTradeById(@Param(value = "id") Long id);
 
-    public Integer batchDeleteDmTrade(Map<String, List<String>> params);
+    Integer batchDeleteDmTrade(Map<String, List<String>> params);
 
 }

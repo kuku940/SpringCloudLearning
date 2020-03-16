@@ -1,6 +1,7 @@
 package cn.xiaoyu.common.client.fallback;
 
 import cn.xiaoyu.common.client.client.RestDmLinkUserClient;
+import cn.xiaoyu.common.exception.BizException;
 import cn.xiaoyu.common.module.pojo.DmLinkUser;
 import org.springframework.stereotype.Component;
 
@@ -10,27 +11,27 @@ import java.util.Map;
 @Component
 public class DmLinkUserClientFallBack implements RestDmLinkUserClient {
     @Override
-    public DmLinkUser getDmLinkUserById(Long id) throws Exception {
+    public DmLinkUser getDmLinkUserById(Long id) throws BizException {
         return null;
     }
 
     @Override
-    public List<DmLinkUser> getDmLinkUserListByMap(Map<String, Object> param) throws Exception {
+    public List<DmLinkUser> getDmLinkUserListByMap(Map<String, Object> param) throws BizException {
         return null;
     }
 
     @Override
-    public Integer getDmLinkUserCountByMap(Map<String, Object> param) throws Exception {
+    public Integer getDmLinkUserCountByMap(Map<String, Object> param) throws BizException {
         return null;
     }
 
     @Override
-    public Integer qdtxAddDmLinkUser(DmLinkUser dmLinkUser) throws Exception {
+    public Integer qdtxAddDmLinkUser(DmLinkUser dmLinkUser) throws BizException {
         return null;
     }
 
     @Override
-    public Integer qdtxModifyDmLinkUser(DmLinkUser dmLinkUser) throws Exception {
+    public Integer qdtxModifyDmLinkUser(DmLinkUser dmLinkUser) throws BizException {
         return null;
     }
 }

@@ -1,9 +1,11 @@
 package cn.xiaoyu.common.module.pojo;
+
 import java.io.Serializable;
 import java.util.Date;
+
 /***
-*   热门关键词排序表
-*/
+ *   热门关键词排序表
+ */
 public class DmKeywordSort implements Serializable {
     //
     private Long id;
@@ -15,35 +17,45 @@ public class DmKeywordSort implements Serializable {
     private Date createdTime;
     //
     private Date updatedTime;
+
     //get set 方法
-    public void setId (Long  id){
-        this.id=id;
+    public void setId(Long id) {
+        this.id = id;
     }
-    public  Long getId(){
+
+    public Long getId() {
         return this.id;
     }
-    public void setKeyword (String  keyword){
-        this.keyword=keyword;
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
     }
-    public  String getKeyword(){
+
+    public String getKeyword() {
         return this.keyword;
     }
-    public void setCount (Integer  count){
-        this.count=count;
+
+    public void setCount(Integer count) {
+        this.count = count;
     }
-    public  Integer getCount(){
+
+    public Integer getCount() {
         return this.count;
     }
-    public void setCreatedTime (Date  createdTime){
-        this.createdTime=createdTime;
+
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
     }
-    public  Date getCreatedTime(){
+
+    public Date getCreatedTime() {
         return this.createdTime;
     }
-    public void setUpdatedTime (Date  updatedTime){
-        this.updatedTime=updatedTime;
+
+    public void setUpdatedTime(Date updatedTime) {
+        this.updatedTime = updatedTime;
     }
-    public  Date getUpdatedTime(){
+
+    public Date getUpdatedTime() {
         return this.updatedTime;
     }
 }

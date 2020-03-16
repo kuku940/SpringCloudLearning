@@ -1,9 +1,11 @@
 package cn.xiaoyu.common.module.pojo;
+
 import java.io.Serializable;
 import java.util.Date;
+
 /***
-*   
-*/
+ *
+ */
 public class DmTrade implements Serializable {
     //
     private String id;
@@ -19,47 +21,61 @@ public class DmTrade implements Serializable {
     private Date createdTime;
     //
     private Date updatedTime;
+
     //get set 方法
-    public void setId (String  id){
-        this.id=id;
+    public void setId(String id) {
+        this.id = id;
     }
-    public  String getId(){
+
+    public String getId() {
         return this.id;
     }
-    public void setOrderNo (String  orderNo){
-        this.orderNo=orderNo;
+
+    public void setOrderNo(String orderNo) {
+        this.orderNo = orderNo;
     }
-    public  String getOrderNo(){
+
+    public String getOrderNo() {
         return this.orderNo;
     }
-    public void setTradeNo (String  tradeNo){
-        this.tradeNo=tradeNo;
+
+    public void setTradeNo(String tradeNo) {
+        this.tradeNo = tradeNo;
     }
-    public  String getTradeNo(){
+
+    public String getTradeNo() {
         return this.tradeNo;
     }
-    public void setPayMethod (Integer  payMethod){
-        this.payMethod=payMethod;
+
+    public void setPayMethod(Integer payMethod) {
+        this.payMethod = payMethod;
     }
-    public  Integer getPayMethod(){
+
+    public Integer getPayMethod() {
         return this.payMethod;
     }
-    public void setAmount (Double  amount){
-        this.amount=amount;
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
     }
-    public  Double getAmount(){
+
+    public Double getAmount() {
         return this.amount;
     }
-    public void setCreatedTime (Date  createdTime){
-        this.createdTime=createdTime;
+
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
     }
-    public  Date getCreatedTime(){
+
+    public Date getCreatedTime() {
         return this.createdTime;
     }
-    public void setUpdatedTime (Date  updatedTime){
-        this.updatedTime=updatedTime;
+
+    public void setUpdatedTime(Date updatedTime) {
+        this.updatedTime = updatedTime;
     }
-    public  Date getUpdatedTime(){
+
+    public Date getUpdatedTime() {
         return this.updatedTime;
     }
 }

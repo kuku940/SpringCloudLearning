@@ -42,7 +42,9 @@ public class LogFilter extends ZuulFilter {
             response = ctx.getResponse();
             return response;
         } finally {
-            logger.info("request: {}, \r\n response: {}", JacksonUtils.toJson(request), JacksonUtils.toJson(response));
+            String requestJson = JacksonUtils.toJson(request);
+            String responseJson = JacksonUtils.toJson(response);
+            logger.info("request: {}, \r\n response: {}", requestJson, responseJson);
         }
     }
 }

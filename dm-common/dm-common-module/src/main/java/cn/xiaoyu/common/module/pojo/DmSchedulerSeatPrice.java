@@ -1,9 +1,11 @@
 package cn.xiaoyu.common.module.pojo;
+
 import java.io.Serializable;
 import java.util.Date;
+
 /***
-*   节目排期座位价格表
-*/
+ *   节目排期座位价格表
+ */
 public class DmSchedulerSeatPrice implements Serializable {
     //主键
     private Long id;
@@ -19,47 +21,61 @@ public class DmSchedulerSeatPrice implements Serializable {
     private Date createdTime;
     //
     private Date updatedTime;
+
     //get set 方法
-    public void setId (Long  id){
-        this.id=id;
+    public void setId(Long id) {
+        this.id = id;
     }
-    public  Long getId(){
+
+    public Long getId() {
         return this.id;
     }
-    public void setPrice (Double  price){
-        this.price=price;
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
-    public  Double getPrice(){
+
+    public Double getPrice() {
         return this.price;
     }
-    public void setAreaLevel (Integer  areaLevel){
-        this.areaLevel=areaLevel;
+
+    public void setAreaLevel(Integer areaLevel) {
+        this.areaLevel = areaLevel;
     }
-    public  Integer getAreaLevel(){
+
+    public Integer getAreaLevel() {
         return this.areaLevel;
     }
-    public void setScheduleId (Long  scheduleId){
-        this.scheduleId=scheduleId;
+
+    public void setScheduleId(Long scheduleId) {
+        this.scheduleId = scheduleId;
     }
-    public  Long getScheduleId(){
+
+    public Long getScheduleId() {
         return this.scheduleId;
     }
-    public void setSeatNum (Integer  seatNum){
-        this.seatNum=seatNum;
+
+    public void setSeatNum(Integer seatNum) {
+        this.seatNum = seatNum;
     }
-    public  Integer getSeatNum(){
+
+    public Integer getSeatNum() {
         return this.seatNum;
     }
-    public void setCreatedTime (Date  createdTime){
-        this.createdTime=createdTime;
+
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
     }
-    public  Date getCreatedTime(){
+
+    public Date getCreatedTime() {
         return this.createdTime;
     }
-    public void setUpdatedTime (Date  updatedTime){
-        this.updatedTime=updatedTime;
+
+    public void setUpdatedTime(Date updatedTime) {
+        this.updatedTime = updatedTime;
     }
-    public  Date getUpdatedTime(){
+
+    public Date getUpdatedTime() {
         return this.updatedTime;
     }
 }

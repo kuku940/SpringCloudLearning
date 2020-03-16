@@ -1,9 +1,11 @@
 package cn.xiaoyu.common.module.pojo;
+
 import java.io.Serializable;
 import java.util.Date;
+
 /***
-*   剧场座位表
-*/
+ *   剧场座位表
+ */
 public class DmCinemaSeat implements Serializable {
     //
     private Long id;
@@ -23,59 +25,77 @@ public class DmCinemaSeat implements Serializable {
     private Date createdTime;
     //更新时间
     private Date updatedTime;
+
     //get set 方法
-    public void setId (Long  id){
-        this.id=id;
+    public void setId(Long id) {
+        this.id = id;
     }
-    public  Long getId(){
+
+    public Long getId() {
         return this.id;
     }
-    public void setX (Integer  x){
-        this.x=x;
+
+    public void setX(Integer x) {
+        this.x = x;
     }
-    public  Integer getX(){
+
+    public Integer getX() {
         return this.x;
     }
-    public void setY (Integer  y){
-        this.y=y;
+
+    public void setY(Integer y) {
+        this.y = y;
     }
-    public  Integer getY(){
+
+    public Integer getY() {
         return this.y;
     }
-    public void setAreaLevel (Integer  areaLevel){
-        this.areaLevel=areaLevel;
+
+    public void setAreaLevel(Integer areaLevel) {
+        this.areaLevel = areaLevel;
     }
-    public  Integer getAreaLevel(){
+
+    public Integer getAreaLevel() {
         return this.areaLevel;
     }
-    public void setCinemaId (Long  cinemaId){
-        this.cinemaId=cinemaId;
+
+    public void setCinemaId(Long cinemaId) {
+        this.cinemaId = cinemaId;
     }
-    public  Long getCinemaId(){
+
+    public Long getCinemaId() {
         return this.cinemaId;
     }
-    public void setSort (Integer  sort){
-        this.sort=sort;
+
+    public void setSort(Integer sort) {
+        this.sort = sort;
     }
-    public  Integer getSort(){
+
+    public Integer getSort() {
         return this.sort;
     }
-    public void setStatus (Integer  status){
-        this.status=status;
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
-    public  Integer getStatus(){
+
+    public Integer getStatus() {
         return this.status;
     }
-    public void setCreatedTime (Date  createdTime){
-        this.createdTime=createdTime;
+
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
     }
-    public  Date getCreatedTime(){
+
+    public Date getCreatedTime() {
         return this.createdTime;
     }
-    public void setUpdatedTime (Date  updatedTime){
-        this.updatedTime=updatedTime;
+
+    public void setUpdatedTime(Date updatedTime) {
+        this.updatedTime = updatedTime;
     }
-    public  Date getUpdatedTime(){
+
+    public Date getUpdatedTime() {
         return this.updatedTime;
     }
 }

@@ -6,8 +6,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class DmUserProviderApplication {
+public class DmBaseProviderApplication {
     public static void main(String[] args) {
-        SpringApplication.run(DmUserProviderApplication.class, args);
+        SpringApplication.run(DmBaseProviderApplication.class, args);
     }
 }

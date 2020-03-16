@@ -10,18 +10,18 @@ import java.util.Map;
 @Mapper
 public interface DmUserMapper {
 
-    public DmUser getDmUserById(@Param(value = "id") Long id) throws Exception;
+    DmUser getDmUserById(@Param(value = "id") Long id);
 
-    public List<DmUser> getDmUserListByMap(Map<String, Object> param) throws Exception;
+    List<DmUser> getDmUserListByMap(Map<String, Object> param);
 
-    public Integer getDmUserCountByMap(Map<String, Object> param) throws Exception;
+    Integer getDmUserCountByMap(Map<String, Object> param);
 
-    public Integer insertDmUser(DmUser dmUser) throws Exception;
+    Integer insertDmUser(DmUser dmUser);
 
-    public Integer updateDmUser(DmUser dmUser) throws Exception;
+    Integer updateDmUser(DmUser dmUser);
 
-    public Integer deleteDmUserById(@Param(value = "id") Long id) throws Exception;
+    Integer deleteDmUserById(@Param(value = "id") Long id);
 
-    public Integer batchDeleteDmUser(Map<String, List<String>> params);
+    Integer batchDeleteDmUser(Map<String, List<String>> params);
 
 }

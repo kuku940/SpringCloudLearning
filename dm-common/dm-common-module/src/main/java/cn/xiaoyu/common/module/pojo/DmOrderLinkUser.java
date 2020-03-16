@@ -1,9 +1,11 @@
 package cn.xiaoyu.common.module.pojo;
+
 import java.io.Serializable;
 import java.util.Date;
+
 /***
-*   订单联系人表
-*/
+ *   订单联系人表
+ */
 public class DmOrderLinkUser implements Serializable {
     //主键
     private Long id;
@@ -23,59 +25,77 @@ public class DmOrderLinkUser implements Serializable {
     private Date createdTime;
     //
     private Long updatedTime;
+
     //get set 方法
-    public void setId (Long  id){
-        this.id=id;
+    public void setId(Long id) {
+        this.id = id;
     }
-    public  Long getId(){
+
+    public Long getId() {
         return this.id;
     }
-    public void setOrderId (Long  orderId){
-        this.orderId=orderId;
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
-    public  Long getOrderId(){
+
+    public Long getOrderId() {
         return this.orderId;
     }
-    public void setLinkUserId (Long  linkUserId){
-        this.linkUserId=linkUserId;
+
+    public void setLinkUserId(Long linkUserId) {
+        this.linkUserId = linkUserId;
     }
-    public  Long getLinkUserId(){
+
+    public Long getLinkUserId() {
         return this.linkUserId;
     }
-    public void setLinkUserName (String  linkUserName){
-        this.linkUserName=linkUserName;
+
+    public void setLinkUserName(String linkUserName) {
+        this.linkUserName = linkUserName;
     }
-    public  String getLinkUserName(){
+
+    public String getLinkUserName() {
         return this.linkUserName;
     }
-    public void setX (Integer  x){
-        this.x=x;
+
+    public void setX(Integer x) {
+        this.x = x;
     }
-    public  Integer getX(){
+
+    public Integer getX() {
         return this.x;
     }
-    public void setY (Integer  y){
-        this.y=y;
+
+    public void setY(Integer y) {
+        this.y = y;
     }
-    public  Integer getY(){
+
+    public Integer getY() {
         return this.y;
     }
-    public void setPrice (Double  price){
-        this.price=price;
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
-    public  Double getPrice(){
+
+    public Double getPrice() {
         return this.price;
     }
-    public void setCreatedTime (Date  createdTime){
-        this.createdTime=createdTime;
+
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
     }
-    public  Date getCreatedTime(){
+
+    public Date getCreatedTime() {
         return this.createdTime;
     }
-    public void setUpdatedTime (Long  updatedTime){
-        this.updatedTime=updatedTime;
+
+    public void setUpdatedTime(Long updatedTime) {
+        this.updatedTime = updatedTime;
     }
-    public  Long getUpdatedTime(){
+
+    public Long getUpdatedTime() {
         return this.updatedTime;
     }
 }

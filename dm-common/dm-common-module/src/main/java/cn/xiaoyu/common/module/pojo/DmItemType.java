@@ -1,9 +1,11 @@
 package cn.xiaoyu.common.module.pojo;
+
 import java.io.Serializable;
 import java.util.Date;
+
 /***
-*   节目类型表
-*/
+ *   节目类型表
+ */
 public class DmItemType implements Serializable {
     //主键
     private Long id;
@@ -21,53 +23,69 @@ public class DmItemType implements Serializable {
     private Date createdTime;
     //更新时间
     private Date updatedTime;
+
     //get set 方法
-    public void setId (Long  id){
-        this.id=id;
+    public void setId(Long id) {
+        this.id = id;
     }
-    public  Long getId(){
+
+    public Long getId() {
         return this.id;
     }
-    public void setItemType (String  itemType){
-        this.itemType=itemType;
+
+    public void setItemType(String itemType) {
+        this.itemType = itemType;
     }
-    public  String getItemType(){
+
+    public String getItemType() {
         return this.itemType;
     }
-    public void setLevel (String  level){
-        this.level=level;
+
+    public void setLevel(String level) {
+        this.level = level;
     }
-    public  String getLevel(){
+
+    public String getLevel() {
         return this.level;
     }
-    public void setParent (Long  parent){
-        this.parent=parent;
+
+    public void setParent(Long parent) {
+        this.parent = parent;
     }
-    public  Long getParent(){
+
+    public Long getParent() {
         return this.parent;
     }
-    public void setAliasName (String  aliasName){
-        this.aliasName=aliasName;
+
+    public void setAliasName(String aliasName) {
+        this.aliasName = aliasName;
     }
-    public  String getAliasName(){
+
+    public String getAliasName() {
         return this.aliasName;
     }
-    public void setKey (String  key){
-        this.key=key;
+
+    public void setKey(String key) {
+        this.key = key;
     }
-    public  String getKey(){
+
+    public String getKey() {
         return this.key;
     }
-    public void setCreatedTime (Date  createdTime){
-        this.createdTime=createdTime;
+
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
     }
-    public  Date getCreatedTime(){
+
+    public Date getCreatedTime() {
         return this.createdTime;
     }
-    public void setUpdatedTime (Date  updatedTime){
-        this.updatedTime=updatedTime;
+
+    public void setUpdatedTime(Date updatedTime) {
+        this.updatedTime = updatedTime;
     }
-    public  Date getUpdatedTime(){
+
+    public Date getUpdatedTime() {
         return this.updatedTime;
     }
 }

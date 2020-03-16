@@ -10,18 +10,17 @@ import java.util.Map;
 @Mapper
 public interface DmImageMapper {
 
-    public DmImage getDmImageById(@Param(value = "id") Long id) throws Exception;
+    DmImage getDmImageById(@Param(value = "id") Long id);
 
-    public List<DmImage> getDmImageListByMap(Map<String, Object> param) throws Exception;
+    List<DmImage> getDmImageListByMap(Map<String, Object> param);
 
-    public Integer getDmImageCountByMap(Map<String, Object> param) throws Exception;
+    Integer getDmImageCountByMap(Map<String, Object> param);
 
-    public Integer insertDmImage(DmImage dmImage) throws Exception;
+    Integer insertDmImage(DmImage dmImage);
 
-    public Integer updateDmImage(DmImage dmImage) throws Exception;
+    Integer updateDmImage(DmImage dmImage);
 
-    public Integer deleteDmImageById(@Param(value = "id") Long id) throws Exception;
+    Integer deleteDmImageById(@Param(value = "id") Long id);
 
-    public Integer batchDeleteDmImage(Map<String, List<String>> params);
-
+    Integer batchDeleteDmImage(Map<String, List<String>> params);
 }

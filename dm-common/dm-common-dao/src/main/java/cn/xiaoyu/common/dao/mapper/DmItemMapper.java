@@ -10,18 +10,17 @@ import java.util.Map;
 @Mapper
 public interface DmItemMapper {
 
-    public DmItem getDmItemById(@Param(value = "id") Long id) throws Exception;
+    DmItem getDmItemById(@Param(value = "id") Long id);
 
-    public List<DmItem> getDmItemListByMap(Map<String, Object> param) throws Exception;
+    List<DmItem> getDmItemListByMap(Map<String, Object> param);
 
-    public Integer getDmItemCountByMap(Map<String, Object> param) throws Exception;
+    Integer getDmItemCountByMap(Map<String, Object> param);
 
-    public Integer insertDmItem(DmItem dmItem) throws Exception;
+    Integer insertDmItem(DmItem dmItem);
 
-    public Integer updateDmItem(DmItem dmItem) throws Exception;
+    Integer updateDmItem(DmItem dmItem);
 
-    public Integer deleteDmItemById(@Param(value = "id") Long id) throws Exception;
+    Integer deleteDmItemById(@Param(value = "id") Long id);
 
-    public Integer batchDeleteDmItem(Map<String, List<String>> params);
-
+    Integer batchDeleteDmItem(Map<String, List<String>> params);
 }

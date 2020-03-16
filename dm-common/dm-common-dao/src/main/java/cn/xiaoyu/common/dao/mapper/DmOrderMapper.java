@@ -10,18 +10,18 @@ import java.util.Map;
 @Mapper
 public interface DmOrderMapper {
 
-    public DmOrder getDmOrderById(@Param(value = "id") Long id) throws Exception;
+    DmOrder getDmOrderById(@Param(value = "id") Long id);
 
-    public List<DmOrder> getDmOrderListByMap(Map<String, Object> param) throws Exception;
+    List<DmOrder> getDmOrderListByMap(Map<String, Object> param);
 
-    public Integer getDmOrderCountByMap(Map<String, Object> param) throws Exception;
+    Integer getDmOrderCountByMap(Map<String, Object> param);
 
-    public Integer insertDmOrder(DmOrder dmOrder) throws Exception;
+    Integer insertDmOrder(DmOrder dmOrder);
 
-    public Integer updateDmOrder(DmOrder dmOrder) throws Exception;
+    Integer updateDmOrder(DmOrder dmOrder);
 
-    public Integer deleteDmOrderById(@Param(value = "id") Long id) throws Exception;
+    Integer deleteDmOrderById(@Param(value = "id") Long id);
 
-    public Integer batchDeleteDmOrder(Map<String, List<String>> params);
+    Integer batchDeleteDmOrder(Map<String, List<String>> params);
 
 }

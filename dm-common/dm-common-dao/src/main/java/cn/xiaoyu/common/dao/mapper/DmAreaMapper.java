@@ -10,18 +10,18 @@ import java.util.Map;
 @Mapper
 public interface DmAreaMapper {
 
-    public DmArea getDmAreaById(@Param(value = "id") Long id) throws Exception;
+    DmArea getDmAreaById(@Param(value = "id") Long id);
 
-    public List<DmArea> getDmAreaListByMap(Map<String, Object> param) throws Exception;
+    List<DmArea> getDmAreaListByMap(Map<String, Object> param);
 
-    public Integer getDmAreaCountByMap(Map<String, Object> param) throws Exception;
+    Integer getDmAreaCountByMap(Map<String, Object> param);
 
-    public Integer insertDmArea(DmArea dmArea) throws Exception;
+    Integer insertDmArea(DmArea dmArea);
 
-    public Integer updateDmArea(DmArea dmArea) throws Exception;
+    Integer updateDmArea(DmArea dmArea);
 
-    public Integer deleteDmAreaById(@Param(value = "id") Long id) throws Exception;
+    Integer deleteDmAreaById(@Param(value = "id") Long id);
 
-    public Integer batchDeleteDmArea(Map<String, List<String>> params);
+    Integer batchDeleteDmArea(Map<String, List<String>> params);
 
 }

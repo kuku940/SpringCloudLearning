@@ -1,9 +1,11 @@
 package cn.xiaoyu.common.module.pojo;
+
 import java.io.Serializable;
 import java.util.Date;
+
 /***
-*   订单表
-*/
+ *   订单表
+ */
 public class DmOrder implements Serializable {
     //主键
     private Long id;
@@ -49,137 +51,181 @@ public class DmOrder implements Serializable {
     private Date createdTime;
     //更新时间
     private Date updatedTime;
+
     //get set 方法
-    public void setId (Long  id){
-        this.id=id;
+    public void setId(Long id) {
+        this.id = id;
     }
-    public  Long getId(){
+
+    public Long getId() {
         return this.id;
     }
-    public void setOrderNo (String  orderNo){
-        this.orderNo=orderNo;
+
+    public void setOrderNo(String orderNo) {
+        this.orderNo = orderNo;
     }
-    public  String getOrderNo(){
+
+    public String getOrderNo() {
         return this.orderNo;
     }
-    public void setUserId (Long  userId){
-        this.userId=userId;
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
-    public  Long getUserId(){
+
+    public Long getUserId() {
         return this.userId;
     }
-    public void setSchedulerId (Long  schedulerId){
-        this.schedulerId=schedulerId;
+
+    public void setSchedulerId(Long schedulerId) {
+        this.schedulerId = schedulerId;
     }
-    public  Long getSchedulerId(){
+
+    public Long getSchedulerId() {
         return this.schedulerId;
     }
-    public void setItemId (Long  itemId){
-        this.itemId=itemId;
+
+    public void setItemId(Long itemId) {
+        this.itemId = itemId;
     }
-    public  Long getItemId(){
+
+    public Long getItemId() {
         return this.itemId;
     }
-    public void setItemName (String  itemName){
-        this.itemName=itemName;
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
-    public  String getItemName(){
+
+    public String getItemName() {
         return this.itemName;
     }
-    public void setWxTradeNo (String  wxTradeNo){
-        this.wxTradeNo=wxTradeNo;
+
+    public void setWxTradeNo(String wxTradeNo) {
+        this.wxTradeNo = wxTradeNo;
     }
-    public  String getWxTradeNo(){
+
+    public String getWxTradeNo() {
         return this.wxTradeNo;
     }
-    public void setAliTradeNo (String  aliTradeNo){
-        this.aliTradeNo=aliTradeNo;
+
+    public void setAliTradeNo(String aliTradeNo) {
+        this.aliTradeNo = aliTradeNo;
     }
-    public  String getAliTradeNo(){
+
+    public String getAliTradeNo() {
         return this.aliTradeNo;
     }
-    public void setOrderType (Integer  orderType){
-        this.orderType=orderType;
+
+    public void setOrderType(Integer orderType) {
+        this.orderType = orderType;
     }
-    public  Integer getOrderType(){
+
+    public Integer getOrderType() {
         return this.orderType;
     }
-    public void setPayType (String  payType){
-        this.payType=payType;
+
+    public void setPayType(String payType) {
+        this.payType = payType;
     }
-    public  String getPayType(){
+
+    public String getPayType() {
         return this.payType;
     }
-    public void setTotalCount (Integer  totalCount){
-        this.totalCount=totalCount;
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
     }
-    public  Integer getTotalCount(){
+
+    public Integer getTotalCount() {
         return this.totalCount;
     }
-    public void setArea (Long  area){
-        this.area=area;
+
+    public void setArea(Long area) {
+        this.area = area;
     }
-    public  Long getArea(){
+
+    public Long getArea() {
         return this.area;
     }
-    public void setSourceType (Integer  sourceType){
-        this.sourceType=sourceType;
+
+    public void setSourceType(Integer sourceType) {
+        this.sourceType = sourceType;
     }
-    public  Integer getSourceType(){
+
+    public Integer getSourceType() {
         return this.sourceType;
     }
-    public void setIsNeedInvoice (Integer  isNeedInvoice){
-        this.isNeedInvoice=isNeedInvoice;
+
+    public void setIsNeedInvoice(Integer isNeedInvoice) {
+        this.isNeedInvoice = isNeedInvoice;
     }
-    public  Integer getIsNeedInvoice(){
+
+    public Integer getIsNeedInvoice() {
         return this.isNeedInvoice;
     }
-    public void setInvoiceType (Integer  invoiceType){
-        this.invoiceType=invoiceType;
+
+    public void setInvoiceType(Integer invoiceType) {
+        this.invoiceType = invoiceType;
     }
-    public  Integer getInvoiceType(){
+
+    public Integer getInvoiceType() {
         return this.invoiceType;
     }
-    public void setInvoiceHead (String  invoiceHead){
-        this.invoiceHead=invoiceHead;
+
+    public void setInvoiceHead(String invoiceHead) {
+        this.invoiceHead = invoiceHead;
     }
-    public  String getInvoiceHead(){
+
+    public String getInvoiceHead() {
         return this.invoiceHead;
     }
-    public void setInvoiceNo (String  invoiceNo){
-        this.invoiceNo=invoiceNo;
+
+    public void setInvoiceNo(String invoiceNo) {
+        this.invoiceNo = invoiceNo;
     }
-    public  String getInvoiceNo(){
+
+    public String getInvoiceNo() {
         return this.invoiceNo;
     }
-    public void setIsNeedInsurance (Integer  isNeedInsurance){
-        this.isNeedInsurance=isNeedInsurance;
+
+    public void setIsNeedInsurance(Integer isNeedInsurance) {
+        this.isNeedInsurance = isNeedInsurance;
     }
-    public  Integer getIsNeedInsurance(){
+
+    public Integer getIsNeedInsurance() {
         return this.isNeedInsurance;
     }
-    public void setTotalAmount (Double  totalAmount){
-        this.totalAmount=totalAmount;
+
+    public void setTotalAmount(Double totalAmount) {
+        this.totalAmount = totalAmount;
     }
-    public  Double getTotalAmount(){
+
+    public Double getTotalAmount() {
         return this.totalAmount;
     }
-    public void setInsuranceAmount (Double  insuranceAmount){
-        this.insuranceAmount=insuranceAmount;
+
+    public void setInsuranceAmount(Double insuranceAmount) {
+        this.insuranceAmount = insuranceAmount;
     }
-    public  Double getInsuranceAmount(){
+
+    public Double getInsuranceAmount() {
         return this.insuranceAmount;
     }
-    public void setCreatedTime (Date  createdTime){
-        this.createdTime=createdTime;
+
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
     }
-    public  Date getCreatedTime(){
+
+    public Date getCreatedTime() {
         return this.createdTime;
     }
-    public void setUpdatedTime (Date  updatedTime){
-        this.updatedTime=updatedTime;
+
+    public void setUpdatedTime(Date updatedTime) {
+        this.updatedTime = updatedTime;
     }
-    public  Date getUpdatedTime(){
+
+    public Date getUpdatedTime() {
         return this.updatedTime;
     }
 }
