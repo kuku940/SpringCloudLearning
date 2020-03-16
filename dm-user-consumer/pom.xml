@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dm-eureka-consumer</artifactId>
+    <artifactId>dm-user-consumer</artifactId>
 
     <dependencies>
         <dependency>
