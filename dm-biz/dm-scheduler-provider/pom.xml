@@ -13,10 +13,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
-        </dependency>
-        <dependency>
             <groupId>cn.xiaoyu</groupId>
             <artifactId>dm-common-dao</artifactId>
             <version>1.0-SNAPSHOT</version>

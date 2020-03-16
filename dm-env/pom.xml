@@ -16,6 +16,7 @@
         <module>dm-gateway-zuul</module>
         <module>dm-eureka-server</module>
         <module>dm-config-server</module>
+        <module>dm-zipkin-server</module>
     </modules>
 
 </project>

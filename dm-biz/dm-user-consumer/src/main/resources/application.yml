@@ -3,6 +3,12 @@ server:
 spring:
   application:
     name: dm-user-consumer
+  # zipkin config
+  zipkin:
+    base-url: http://localhost:7700
+  sleuth:
+    sampler:
+      percentage: 1.0
 eureka:
   instance:
     prefer-ip-address: true
@@ -19,3 +25,5 @@ feign:
 dm-user-provider:
   ribbon:
     NFLoadBalanceRuleClassName: com.netflix.loadbalance.RandomRule
+logging:
+  level: info
