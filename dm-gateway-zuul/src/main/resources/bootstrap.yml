@@ -7,4 +7,10 @@ spring:
     config:
       uri: http://localhost:7900
       profile: prod
-      lable: master
+      lable: BaseEnv
+# sleuth + zipkin
+  sleuth:
+    sampler:
+      percentage: 1.0
+  zipkin:
+    base-url: http://zipkin:7800

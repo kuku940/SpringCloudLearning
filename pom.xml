@@ -21,6 +21,7 @@
         <module>dm-common</module>
         <module>dm-user-provider</module>
         <module>dm-user-consumer</module>
+        <module>dm-zipkin-server</module>
     </modules>
 
     <properties>

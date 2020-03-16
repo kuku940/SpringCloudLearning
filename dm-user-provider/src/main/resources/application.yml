@@ -4,6 +4,11 @@
 spring:
   application:
     name: dm-user-provider
+  sleuth:
+    sampler:
+      percentage: 1.0
+  zipkin:
+    base-url: http://zipkin:7800
 eureka:
   instance:
     prefer-ip-address: true
