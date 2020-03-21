@@ -12,5 +12,4 @@ public class DmConfigServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(DmConfigServerApplication.class, args);
     }
-
 }

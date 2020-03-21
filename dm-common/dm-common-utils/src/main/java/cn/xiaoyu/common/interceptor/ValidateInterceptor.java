@@ -7,7 +7,7 @@ import cn.xiaoyu.common.utils.BaseException;
 import cn.xiaoyu.common.utils.EmptyUtils;
 import cn.xiaoyu.common.utils.LogUtils;
 import cn.xiaoyu.common.utils.PrintUtil;
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.JSON;
 import org.apache.log4j.Logger;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -35,7 +35,7 @@ public class ValidateInterceptor implements HandlerInterceptor {
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-
+        
     }
 
     /**
@@ -64,13 +64,13 @@ public class ValidateInterceptor implements HandlerInterceptor {
                     BaseException se = (BaseException) ex;
                     dto = DtoUtil.returnFail(se.getErrorMessage(), se.getErrorCode());
                 } else {
-                    dto = DtoUtil.returnFail(ErrorCode.COMMON_Exception.getErrorMessage(), ErrorCode.COMMON_Exception.getErrorCode());
+                    dto = DtoUtil.returnFail(ErrorCode.COMMON_EXCEPTION.getErrorMessage(), ErrorCode.COMMON_EXCEPTION.getErrCode());
                 }
-                String msg = JSONObject.toJSONString(dto);
+                String msg = JSON.toJSONString(dto);
                 print.print(msg);
             } catch (Exception e) {
                 if (!(ex instanceof BaseException)) {
-                    e.printStackTrace();
+                    logger.error(ex);
                 }
             }
         }

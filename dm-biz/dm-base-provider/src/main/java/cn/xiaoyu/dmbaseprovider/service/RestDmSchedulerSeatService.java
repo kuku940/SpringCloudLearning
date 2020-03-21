@@ -3,7 +3,10 @@ package cn.xiaoyu.dmbaseprovider.service;
 import cn.xiaoyu.common.dao.mapper.DmSchedulerSeatMapper;
 import cn.xiaoyu.common.module.pojo.DmSchedulerSeat;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.List;
@@ -14,29 +17,29 @@ public class RestDmSchedulerSeatService {
     @Autowired
     private DmSchedulerSeatMapper dmSchedulerSeatMapper;
 
-    @RequestMapping(value = "/getDmSchedulerSeatById", method = RequestMethod.POST)
-    public DmSchedulerSeat getDmSchedulerSeatById(@RequestParam("id") Long id) throws Exception {
+    @GetMapping(value = "/getDmSchedulerSeatById")
+    public DmSchedulerSeat getDmSchedulerSeatById(@RequestParam("id") Long id) {
         return dmSchedulerSeatMapper.getDmSchedulerSeatById(id);
     }
 
-    @RequestMapping(value = "/getDmSchedulerSeatListByMap", method = RequestMethod.POST)
-    public List<DmSchedulerSeat> getDmSchedulerSeatListByMap(@RequestParam Map<String, Object> param) throws Exception {
+    @GetMapping(value = "/getDmSchedulerSeatListByMap")
+    public List<DmSchedulerSeat> getDmSchedulerSeatListByMap(@RequestParam Map<String, Object> param) {
         return dmSchedulerSeatMapper.getDmSchedulerSeatListByMap(param);
     }
 
-    @RequestMapping(value = "/getDmSchedulerSeatCountByMap", method = RequestMethod.POST)
-    public Integer getDmSchedulerSeatCountByMap(@RequestParam Map<String, Object> param) throws Exception {
+    @GetMapping(value = "/getDmSchedulerSeatCountByMap")
+    public Integer getDmSchedulerSeatCountByMap(@RequestParam Map<String, Object> param) {
         return dmSchedulerSeatMapper.getDmSchedulerSeatCountByMap(param);
     }
 
-    @RequestMapping(value = "/qdtxAddDmSchedulerSeat", method = RequestMethod.POST)
-    public Integer qdtxAddDmSchedulerSeat(@RequestBody DmSchedulerSeat dmSchedulerSeat) throws Exception {
+    @GetMapping(value = "/qdtxAddDmSchedulerSeat")
+    public Integer qdtxAddDmSchedulerSeat(@RequestBody DmSchedulerSeat dmSchedulerSeat) {
         dmSchedulerSeat.setCreatedTime(new Date());
         return dmSchedulerSeatMapper.insertDmSchedulerSeat(dmSchedulerSeat);
     }
 
-    @RequestMapping(value = "/qdtxModifyDmSchedulerSeat", method = RequestMethod.POST)
-    public Integer qdtxModifyDmSchedulerSeat(@RequestBody DmSchedulerSeat dmSchedulerSeat) throws Exception {
+    @GetMapping(value = "/qdtxModifyDmSchedulerSeat")
+    public Integer qdtxModifyDmSchedulerSeat(@RequestBody DmSchedulerSeat dmSchedulerSeat) {
         dmSchedulerSeat.setUpdatedTime(new Date());
         return dmSchedulerSeatMapper.updateDmSchedulerSeat(dmSchedulerSeat);
     }

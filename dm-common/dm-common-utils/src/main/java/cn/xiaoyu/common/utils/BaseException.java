@@ -15,7 +15,7 @@ public class BaseException extends Exception {
     public BaseException(IErrorCode iErrorCode) {
         super(iErrorCode.getErrorMessage());
         this.iErrorCode = iErrorCode;
-        this.errorCode = iErrorCode.getErrorCode();
+        this.errorCode = iErrorCode.getErrCode();
         this.errorMessage = iErrorCode.getErrorMessage();
     }
 

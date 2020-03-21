@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dm-common-ext-utils</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -33,11 +34,6 @@
             <groupId>cz.mallat.uasparser</groupId>
             <artifactId>uasparser</artifactId>
             <version>0.6.0</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.jms</groupId>
-            <artifactId>jms</artifactId>
-            <version>1.1</version>
         </dependency>
         <dependency>
             <groupId>redis.clients</groupId>

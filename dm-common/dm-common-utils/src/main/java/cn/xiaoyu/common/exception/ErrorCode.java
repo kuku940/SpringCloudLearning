@@ -7,25 +7,25 @@ public enum ErrorCode implements IErrorCode {
      * 通用异常
      */
     COMMON_NO_LOGIN("0001", "用户未登录"),
-    COMMON_Exception("0002", "系统异常"),
+    COMMON_EXCEPTION("0002", "系统异常"),
     /**
      * 节目项目异常
      */
     ;
-    private String errorCode;
+    private String errCode;
     private String errorMessage;
 
-    private ErrorCode(String errorCode, String errorMessage) {
-        this.errorCode = errorCode;
+    private ErrorCode(String errCode, String errorMessage) {
+        this.errCode = errCode;
         this.errorMessage = errorMessage;
     }
 
-    public String getErrorCode() {
-        return errorCode;
+    public String getErrCode() {
+        return errCode;
     }
 
-    public void setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
+    public void setErrCode(String errCode) {
+        this.errCode = errCode;
     }
 
     public String getErrorMessage() {

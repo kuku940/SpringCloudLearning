@@ -1,6 +1,11 @@
 server:
   port: 9210
 spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/dm_base?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 123456
+    driver-class-name: org.gjt.mm.mysql.Driver
   application:
     name: dm-base-provider
 eureka:
@@ -11,3 +16,5 @@ eureka:
   client:
     service-url:
       defaultZone: http://root:123456@localhost:7776/eureka/
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml

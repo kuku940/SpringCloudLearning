@@ -3,7 +3,10 @@ package cn.xiaoyu.dmbaseprovider.service;
 import cn.xiaoyu.common.dao.mapper.DmAreaMapper;
 import cn.xiaoyu.common.module.pojo.DmArea;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.List;
@@ -11,33 +14,32 @@ import java.util.Map;
 
 @RestController
 public class RestDmAreaService {
-
     @Autowired
     private DmAreaMapper dmAreaMapper;
 
-    @RequestMapping(value = "/getDmAreaById", method = RequestMethod.POST)
-    public DmArea getDmAreaById(@RequestParam("id") Long id) throws Exception {
+    @GetMapping(value = "/getDmAreaById")
+    public DmArea getDmAreaById(@RequestParam("id") Long id) {
         return dmAreaMapper.getDmAreaById(id);
     }
 
-    @RequestMapping(value = "/getDmAreaListByMap", method = RequestMethod.POST)
-    public List<DmArea> getDmAreaListByMap(@RequestParam Map<String, Object> param) throws Exception {
+    @GetMapping(value = "/getDmAreaListByMap")
+    public List<DmArea> getDmAreaListByMap(@RequestParam Map<String, Object> param) {
         return dmAreaMapper.getDmAreaListByMap(param);
     }
 
-    @RequestMapping(value = "/getDmAreaCountByMap", method = RequestMethod.POST)
-    public Integer getDmAreaCountByMap(@RequestParam Map<String, Object> param) throws Exception {
+    @GetMapping(value = "/getDmAreaCountByMap")
+    public Integer getDmAreaCountByMap(@RequestParam Map<String, Object> param) {
         return dmAreaMapper.getDmAreaCountByMap(param);
     }
 
-    @RequestMapping(value = "/qdtxAddDmArea", method = RequestMethod.POST)
-    public Integer qdtxAddDmArea(@RequestBody DmArea dmArea) throws Exception {
+    @GetMapping(value = "/qdtxAddDmArea")
+    public Integer qdtxAddDmArea(@RequestBody DmArea dmArea) {
         dmArea.setCreatedTime(new Date());
         return dmAreaMapper.insertDmArea(dmArea);
     }
 
-    @RequestMapping(value = "/qdtxModifyDmArea", method = RequestMethod.POST)
-    public Integer qdtxModifyDmArea(@RequestBody DmArea dmArea) throws Exception {
+    @GetMapping(value = "/qdtxModifyDmArea")
+    public Integer qdtxModifyDmArea(@RequestBody DmArea dmArea) {
         dmArea.setUpdatedTime(new Date());
         return dmAreaMapper.updateDmArea(dmArea);
     }

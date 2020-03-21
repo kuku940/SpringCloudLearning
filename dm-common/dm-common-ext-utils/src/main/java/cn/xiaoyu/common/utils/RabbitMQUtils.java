@@ -31,8 +31,6 @@ public class RabbitMQUtils {
 
     /**
      * 重置座位状态
-     *
-     * @return
      */
     @Bean
     public Queue toResetSeatQueue() {
@@ -41,8 +39,6 @@ public class RabbitMQUtils {
 
     /**
      * 删除订单
-     *
-     * @return
      */
     @Bean
     public Queue toDelOrderQueue() {
@@ -51,8 +47,6 @@ public class RabbitMQUtils {
 
     /**
      * 重置联系人
-     *
-     * @return
      */
     @Bean
     public Queue toResetLinkUserQueue() {

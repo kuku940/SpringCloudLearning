@@ -2,7 +2,6 @@ package cn.xiaoyu.common.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -22,10 +21,6 @@ public class RedisUtils {
 
     /**
      * set key and value to redis
-     *
-     * @param key
-     * @param value
-     * @return
      */
     public boolean set(String key, String value) {
         redisTemplate.setKeySerializer(new StringRedisSerializer());
@@ -38,11 +33,6 @@ public class RedisUtils {
 
     /**
      * set key and value to redis
-     *
-     * @param key
-     * @param seconds 有效期
-     * @param value
-     * @return
      */
     public boolean set(String key, long seconds, String value) {
         redisTemplate.setKeySerializer(new StringRedisSerializer());
@@ -56,10 +46,6 @@ public class RedisUtils {
 
     /**
      * 更新指定key的value，剩余过期时间不变
-     *
-     * @param key
-     * @param value
-     * @return
      */
     public boolean update(String key, String value) {
         redisTemplate.setKeySerializer(new StringRedisSerializer());
@@ -81,24 +67,17 @@ public class RedisUtils {
 
     /**
      * 获取剩余过期时间
-     *
-     * @param key
-     * @return
      */
     public Long getExpire(String key) {
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         //设置序列化Value的实例化对象
         redisTemplate.setValueSerializer(new StringRedisSerializer());
-        ValueOperations<String, Object> vo = redisTemplate.opsForValue();
         //获取当前key的过期时间
         return redisTemplate.getExpire(key);
     }
 
     /**
      * 判断某个key是否存在
-     *
-     * @param key
-     * @return
      */
     public boolean exist(String key) {
         redisTemplate.setKeySerializer(new StringRedisSerializer());
@@ -106,7 +85,7 @@ public class RedisUtils {
         redisTemplate.setValueSerializer(new StringRedisSerializer());
         ValueOperations<String, Object> vo = redisTemplate.opsForValue();
         Object value = vo.get(key);
-        return EmptyUtils.isEmpty(value) ? false : true;
+        return !EmptyUtils.isEmpty(value);
     }
 
     public Object get(String key) {
@@ -124,49 +103,41 @@ public class RedisUtils {
             redisTemplate.setValueSerializer(new StringRedisSerializer());
             redisTemplate.delete(key);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Redis delete Fail", e);
         }
     }
 
-    public Boolean setnx(final String key, final String value) throws Exception {
-        return redisTemplate.execute(new RedisCallback<Boolean>() {
-            @Override
-            public Boolean doInRedis(RedisConnection redisConnection) {
-                boolean flag = false;
-                try {
-                    redisTemplate.setKeySerializer(new StringRedisSerializer());
-                    //设置序列化Value的实例化对象
-                    redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
-                    StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
-                    byte keys[] = stringRedisSerializer.serialize(key);
-                    byte values[] = stringRedisSerializer.serialize(value);
-                    flag = redisConnection.setNX(keys, values);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                } finally {
-                    return flag;
-                }
+    public Boolean setnx(final String key, final String value) {
+        return redisTemplate.execute((RedisCallback<Boolean>) redisConnection -> {
+            boolean flag = false;
+            try {
+                redisTemplate.setKeySerializer(new StringRedisSerializer());
+                //设置序列化Value的实例化对象
+                redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
+                StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
+                byte[] keys = stringRedisSerializer.serialize(key);
+                byte[] values = stringRedisSerializer.serialize(value);
+                flag = redisConnection.setNX(keys, values);
+            } catch (Exception e) {
+                logger.error("Redis setnx Fail", e);
             }
+            return flag;
         });
     }
 
     public Boolean expire(final String key, final long expireTime) {
-        return redisTemplate.execute(new RedisCallback<Boolean>() {
-            @Override
-            public Boolean doInRedis(RedisConnection redisConnection) throws DataAccessException {
-                boolean flag = false;
-                try {
-                    redisTemplate.setKeySerializer(new StringRedisSerializer());
-                    //设置序列化Value的实例化对象
-                    redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
-                    StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
-                    byte keys[] = stringRedisSerializer.serialize(key);
-                    flag = redisConnection.expire(keys, expireTime);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                return flag;
+        return redisTemplate.execute((RedisCallback<Boolean>) redisConnection -> {
+            try {
+                redisTemplate.setKeySerializer(new StringRedisSerializer());
+                //设置序列化Value的实例化对象
+                redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
+                StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
+                byte[] keys = stringRedisSerializer.serialize(key);
+                return redisConnection.expire(keys, expireTime);
+            } catch (Exception e) {
+                logger.error("Redis expire Fail", e);
             }
+            return false;
         });
     }
 
@@ -176,19 +147,19 @@ public class RedisUtils {
             String lockKey = generateLockKey(key);
             flag = setnx(lockKey, "lock");
             if (flag) {
-                System.out.println(expire(lockKey, Constants.Redis_Expire.DEFAULT_EXPIRE));
+                Boolean expire = expire(lockKey, Constants.Redis_Expire.DEFAULT_EXPIRE);
+                logger.info("key expired {}", expire);
             }
             return flag;
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Redis lock fail", e);
         }
         return flag;
     }
 
     public Object getValueNx(String key) {
         String lockKey = generateLockKey(key);
-        Object object = get(lockKey);
-        return object;
+        return get(lockKey);
     }
 
     public void unlock(String key) {

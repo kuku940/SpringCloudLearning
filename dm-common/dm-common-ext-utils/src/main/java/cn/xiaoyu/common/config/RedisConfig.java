@@ -14,8 +14,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 public class RedisConfig extends CachingConfigurerSupport {
     @Bean
     public CacheManager cacheManager(RedisTemplate<?, ?> redisTemplate) {
-        CacheManager cacheManager = new RedisCacheManager(redisTemplate);
-        return cacheManager;
+        return new RedisCacheManager(redisTemplate);
     }
 
     @Bean

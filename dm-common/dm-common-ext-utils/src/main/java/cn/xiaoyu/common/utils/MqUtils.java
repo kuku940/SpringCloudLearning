@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Component
 public class MqUtils implements Serializable {
     @Autowired
-    private JmsMessagingTemplate jmsMessagingTemplate;
+    private transient JmsMessagingTemplate jmsMessagingTemplate;
 
     public void sendMessage(String queueName, Object object) {
         Queue queue = new ActiveMQQueue(queueName);

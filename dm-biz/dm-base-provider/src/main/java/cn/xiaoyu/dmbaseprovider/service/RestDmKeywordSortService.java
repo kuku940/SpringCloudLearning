@@ -3,7 +3,10 @@ package cn.xiaoyu.dmbaseprovider.service;
 import cn.xiaoyu.common.dao.mapper.DmKeywordSortMapper;
 import cn.xiaoyu.common.module.pojo.DmKeywordSort;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.List;
@@ -14,29 +17,29 @@ public class RestDmKeywordSortService {
     @Autowired
     private DmKeywordSortMapper dmKeywordSortMapper;
 
-    @RequestMapping(value = "/getDmKeywordSortById", method = RequestMethod.POST)
-    public DmKeywordSort getDmKeywordSortById(@RequestParam("id") Long id) throws Exception {
+    @GetMapping(value = "/getDmKeywordSortById")
+    public DmKeywordSort getDmKeywordSortById(@RequestParam("id") Long id) {
         return dmKeywordSortMapper.getDmKeywordSortById(id);
     }
 
-    @RequestMapping(value = "/getDmKeywordSortListByMap", method = RequestMethod.POST)
-    public List<DmKeywordSort> getDmKeywordSortListByMap(@RequestParam Map<String, Object> param) throws Exception {
+    @GetMapping(value = "/getDmKeywordSortListByMap")
+    public List<DmKeywordSort> getDmKeywordSortListByMap(@RequestParam Map<String, Object> param) {
         return dmKeywordSortMapper.getDmKeywordSortListByMap(param);
     }
 
-    @RequestMapping(value = "/getDmKeywordSortCountByMap", method = RequestMethod.POST)
-    public Integer getDmKeywordSortCountByMap(@RequestParam Map<String, Object> param) throws Exception {
+    @GetMapping(value = "/getDmKeywordSortCountByMap")
+    public Integer getDmKeywordSortCountByMap(@RequestParam Map<String, Object> param) {
         return dmKeywordSortMapper.getDmKeywordSortCountByMap(param);
     }
 
-    @RequestMapping(value = "/qdtxAddDmKeywordSort", method = RequestMethod.POST)
-    public Integer qdtxAddDmKeywordSort(@RequestBody DmKeywordSort dmKeywordSort) throws Exception {
+    @GetMapping(value = "/qdtxAddDmKeywordSort")
+    public Integer qdtxAddDmKeywordSort(@RequestBody DmKeywordSort dmKeywordSort) {
         dmKeywordSort.setCreatedTime(new Date());
         return dmKeywordSortMapper.insertDmKeywordSort(dmKeywordSort);
     }
 
-    @RequestMapping(value = "/qdtxModifyDmKeywordSort", method = RequestMethod.POST)
-    public Integer qdtxModifyDmKeywordSort(@RequestBody DmKeywordSort dmKeywordSort) throws Exception {
+    @GetMapping(value = "/qdtxModifyDmKeywordSort")
+    public Integer qdtxModifyDmKeywordSort(@RequestBody DmKeywordSort dmKeywordSort) {
         dmKeywordSort.setUpdatedTime(new Date());
         return dmKeywordSortMapper.updateDmKeywordSort(dmKeywordSort);
     }
