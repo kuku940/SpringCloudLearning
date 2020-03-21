@@ -4,7 +4,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 
-/***
+/**
  * 商品查询返回的VO
  */
 @Data

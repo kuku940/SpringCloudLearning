@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.Date;
 
-/***
+/**
  *   节目排期座位价格表
  */
 @Data

@@ -4,7 +4,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 
-/***
+/**
  * 抢购商品消息
  */
 @Data

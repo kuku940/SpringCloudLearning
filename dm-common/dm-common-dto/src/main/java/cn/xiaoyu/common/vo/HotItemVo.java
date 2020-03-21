@@ -2,7 +2,7 @@ package cn.xiaoyu.common.vo;
 
 import lombok.Data;
 
-/***
+/**
  * 热门节目数据传递VO
  */
 @Data

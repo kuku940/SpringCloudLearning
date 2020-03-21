@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.List;
 
-/***
+/**
  * 不同楼层的数据封装
  */
 @Data

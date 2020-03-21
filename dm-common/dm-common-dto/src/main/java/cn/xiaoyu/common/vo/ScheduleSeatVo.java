@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.List;
 
-/***
+/**
  * 排期座位VO
  */
 @Data

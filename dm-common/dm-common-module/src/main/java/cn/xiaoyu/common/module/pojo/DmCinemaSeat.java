@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.Date;
 
-/***
+/**
  *   剧场座位表
  */
 @Data

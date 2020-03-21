@@ -12,7 +12,7 @@ public class DtoUtil {
 
     public static String errorCode = "0000";
 
-    /***
+    /**
      * 统一返回成功的DTO
      */
     public static Dto returnSuccess() {
@@ -21,7 +21,7 @@ public class DtoUtil {
         return dto;
     }
 
-    /***
+    /**
      * 统一返回成功的DTO 带数据
      */
     public static Dto returnSuccess(String message, Object data) {
@@ -33,7 +33,7 @@ public class DtoUtil {
         return dto;
     }
 
-    /***
+    /**
      * 统一返回成功的DTO 不带数据
      */
     public static Dto returnSuccess(String message) {
@@ -44,7 +44,7 @@ public class DtoUtil {
         return dto;
     }
 
-    /***
+    /**
      * 统一返回成功的DTO 带数据 没有消息
      */
     public static Dto returnDataSuccess(Object data) {
