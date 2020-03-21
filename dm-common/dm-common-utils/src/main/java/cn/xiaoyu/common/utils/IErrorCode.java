@@ -1,7 +1,9 @@
 package cn.xiaoyu.common.utils;
 
-public interface IErrorCode {
-    public String getErrCode();
+import java.io.Serializable;
 
-    public String getErrorMessage();
+public interface IErrorCode extends Serializable {
+    String getErrCode();
+
+    String getErrorMessage();
 }
