@@ -20,8 +20,9 @@ public interface DmOrderMapper {
 
     Integer updateDmOrder(DmOrder dmOrder);
 
-    Integer deleteDmOrderById(@Param(value = "id") Long id);
+    List<DmOrder> getDmOrderListByOrderNoOrDate(Map<String, Object> param);
 
-    Integer batchDeleteDmOrder(Map<String, List<String>> params);
+    Integer flushCancelOrderType();
 
+    List<DmOrder> getDmOrderByOrderTypeAndTime();
 }

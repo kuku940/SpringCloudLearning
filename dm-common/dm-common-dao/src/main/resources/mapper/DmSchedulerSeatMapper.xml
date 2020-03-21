@@ -179,4 +179,32 @@
             </if>
         </trim>
     </update>
+
+    <select id="getDmSchedulerSeatByOrder" resultType="cn.xiaoyu.common.module.pojo.DmSchedulerSeat">
+        select
+        id as id,
+        x as x,
+        y as y,
+        areaLevel as areaLevel,
+        scheduleId as scheduleId,
+        orderNo as orderNo,
+        userId as userId,
+        status as status,
+        sort as sort,
+        createdTime as createdTime,
+        updatedTime as updatedTime
+        from dm_scheduler_seat
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="scheduleId != null and scheduleId!=''">
+                and scheduleId=#{scheduleId}
+            </if>
+            <if test="x != null and x!=''">
+                and x=#{x}
+            </if>
+            <if test="y != null and y!=''">
+                and y=#{y}
+            </if>
+        </trim>
+    </select>
+
 </mapper>

@@ -19,9 +19,4 @@ public interface DmSchedulerMapper {
     Integer insertDmScheduler(DmScheduler dmScheduler);
 
     Integer updateDmScheduler(DmScheduler dmScheduler);
-
-    Integer deleteDmSchedulerById(@Param(value = "id") Long id);
-
-    Integer batchDeleteDmScheduler(Map<String, List<String>> params);
-
 }

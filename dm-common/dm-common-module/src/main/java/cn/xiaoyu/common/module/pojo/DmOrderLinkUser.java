@@ -18,14 +18,14 @@ public class DmOrderLinkUser implements Serializable {
     private Long linkUserId;
     //入住人姓名逗号分隔
     private String linkUserName;
-    //
+    //座位位置
     private Integer x;
     //
     private Integer y;
-    //价格
+    //座位价格
     private Double price;
     //
     private Date createdTime;
     //
-    private Long updatedTime;
+    private Date updatedTime;
 }

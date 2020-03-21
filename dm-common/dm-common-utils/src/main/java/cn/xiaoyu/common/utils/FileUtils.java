@@ -6,7 +6,7 @@ import java.io.*;
  * 文件读写
  */
 public class FileUtils implements Serializable {
-    /***
+    /**
      * 将content 写入文件
      * @param fileDir
      * @param content
@@ -33,7 +33,7 @@ public class FileUtils implements Serializable {
         }
     }
 
-    /***
+    /**
      * 从fileDir 读取文件
      * @param fileDir
      */

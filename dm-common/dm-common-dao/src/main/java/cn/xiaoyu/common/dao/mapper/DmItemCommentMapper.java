@@ -19,8 +19,4 @@ public interface DmItemCommentMapper {
     Integer insertDmItemComment(DmItemComment dmItemComment);
 
     Integer updateDmItemComment(DmItemComment dmItemComment);
-
-    Integer deleteDmItemCommentById(@Param(value = "id") Long id);
-
-    Integer batchDeleteDmItemComment(Map<String, List<String>> params);
 }

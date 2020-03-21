@@ -3,7 +3,10 @@ package cn.xiaoyu.dmitemprovider.service;
 import cn.xiaoyu.common.dao.mapper.DmCinemaSeatMapper;
 import cn.xiaoyu.common.module.pojo.DmCinemaSeat;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.List;
@@ -14,29 +17,29 @@ public class RestDmCinemaSeatService {
     @Autowired
     private DmCinemaSeatMapper dmCinemaSeatMapper;
 
-    @RequestMapping(value = "/getDmCinemaSeatById", method = RequestMethod.POST)
-    public DmCinemaSeat getDmCinemaSeatById(@RequestParam("id") Long id) throws Exception {
+    @PostMapping(value = "/getDmCinemaSeatById")
+    public DmCinemaSeat getDmCinemaSeatById(@RequestParam("id") Long id) {
         return dmCinemaSeatMapper.getDmCinemaSeatById(id);
     }
 
-    @RequestMapping(value = "/getDmCinemaSeatListByMap", method = RequestMethod.POST)
-    public List<DmCinemaSeat> getDmCinemaSeatListByMap(@RequestParam Map<String, Object> param) throws Exception {
+    @PostMapping(value = "/getDmCinemaSeatListByMap")
+    public List<DmCinemaSeat> getDmCinemaSeatListByMap(@RequestParam Map<String, Object> param) {
         return dmCinemaSeatMapper.getDmCinemaSeatListByMap(param);
     }
 
-    @RequestMapping(value = "/getDmCinemaSeatCountByMap", method = RequestMethod.POST)
-    public Integer getDmCinemaSeatCountByMap(@RequestParam Map<String, Object> param) throws Exception {
+    @PostMapping(value = "/getDmCinemaSeatCountByMap")
+    public Integer getDmCinemaSeatCountByMap(@RequestParam Map<String, Object> param) {
         return dmCinemaSeatMapper.getDmCinemaSeatCountByMap(param);
     }
 
-    @RequestMapping(value = "/qdtxAddDmCinemaSeat", method = RequestMethod.POST)
-    public Integer qdtxAddDmCinemaSeat(@RequestBody DmCinemaSeat dmCinemaSeat) throws Exception {
+    @PostMapping(value = "/qdtxAddDmCinemaSeat")
+    public Integer qdtxAddDmCinemaSeat(@RequestBody DmCinemaSeat dmCinemaSeat) {
         dmCinemaSeat.setCreatedTime(new Date());
         return dmCinemaSeatMapper.insertDmCinemaSeat(dmCinemaSeat);
     }
 
-    @RequestMapping(value = "/qdtxModifyDmCinemaSeat", method = RequestMethod.POST)
-    public Integer qdtxModifyDmCinemaSeat(@RequestBody DmCinemaSeat dmCinemaSeat) throws Exception {
+    @PostMapping(value = "/qdtxModifyDmCinemaSeat")
+    public Integer qdtxModifyDmCinemaSeat(@RequestBody DmCinemaSeat dmCinemaSeat) {
         dmCinemaSeat.setUpdatedTime(new Date());
         return dmCinemaSeatMapper.updateDmCinemaSeat(dmCinemaSeat);
     }

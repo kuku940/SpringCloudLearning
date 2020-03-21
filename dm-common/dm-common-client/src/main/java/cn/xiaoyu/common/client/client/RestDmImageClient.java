@@ -15,17 +15,22 @@ import java.util.Map;
 public interface RestDmImageClient {
 
     @PostMapping(value = "/getDmImageById")
-    public DmImage getDmImageById(@RequestParam("id") Long id);
+    DmImage getDmImageById(@RequestParam("id") Long id);
 
     @PostMapping(value = "/getDmImageListByMap")
-    public List<DmImage> getDmImageListByMap(@RequestParam Map<String, Object> param);
+    List<DmImage> getDmImageListByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/getDmImageCountByMap")
-    public Integer getDmImageCountByMap(@RequestParam Map<String, Object> param);
+    Integer getDmImageCountByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/qdtxAddDmImage")
-    public Integer qdtxAddDmImage(@RequestBody DmImage dmImage);
+    Integer qdtxAddDmImage(@RequestBody DmImage dmImage);
 
     @PostMapping(value = "/qdtxModifyDmImage")
-    public Integer qdtxModifyDmImage(@RequestBody DmImage dmImage);
+    Integer qdtxModifyDmImage(@RequestBody DmImage dmImage);
+
+    @PostMapping(value = "/queryDmImageList")
+    List<DmImage> queryDmImageList(@RequestParam("targetId") Long targetId,
+                                   @RequestParam(value = "type", required = false) Integer type,
+                                   @RequestParam(value = "category", required = false) Integer category);
 }

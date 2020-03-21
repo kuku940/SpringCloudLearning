@@ -360,4 +360,81 @@
             </if>
         </trim>
     </update>
+
+    <select id="getHotDmItemListForEs" resultType="cn.xiaoyu.common.module.pojo.DmItem" parameterType="java.util.Map">
+        select
+            id as id,
+            itemName as itemName,
+            abstractMessage as abstractMessage,
+            itemType1Id as itemType1Id,
+            itemType1Name as itemType1Name,
+            itemType2Id as itemType2Id,
+            itemType2Name as itemType2Name,
+            state as state,
+            longitude as longitude,
+            latitude as latitude,
+            isRecommend as isRecommend,
+            avgScore as avgScore,
+            commentCount as commentCount,
+            cinemaId as cinemaId,
+            startTime as startTime,
+            endTime as endTime,
+            minPrice as minPrice,
+            maxPrice as maxPrice
+        from dm_item
+    </select>
+
+    <select id="getHotDmItemList" resultType="cn.xiaoyu.common.module.pojo.DmItem" parameterType="java.util.Map">
+        select
+        id as id,
+        itemName as itemName,
+        abstractMessage as abstractMessage,
+        itemType1Id as itemType1Id,
+        itemType1Name as itemType1Name,
+        itemType2Id as itemType2Id,
+        itemType2Name as itemType2Name,
+        state as state,
+        basicDescription as basicDescription,
+        projectDescription as projectDescription,
+        reminderDescription as reminderDescription,
+        longitude as longitude,
+        latitude as latitude,
+        isRecommend as isRecommend,
+        avgScore as avgScore,
+        commentCount as commentCount,
+        cinemaId as cinemaId,
+        startTime as startTime,
+        endTime as endTime,
+        minPrice as minPrice,
+        maxPrice as maxPrice,
+        ageGroup as ageGroup,
+        createdTime as createdTime,
+        updatedTime as updatedTime
+        from dm_item
+        WHERE cinemaId IN
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        order by commentCount DESC
+        <if test="beginPos != null and pageSize != null ">
+            limit #{beginPos},#{pageSize}
+        </if>
+    </select>
+
+    <select id="getItemByMonth" resultType="cn.xiaoyu.common.module.pojo.DmItem" parameterType="java.util.Map">
+        select
+            id as id,
+            itemName as itemName,
+            itemType1Id as itemType1Id,
+            itemType1Name as itemType1Name,
+            itemType2Id as itemType2Id,
+            itemType2Name as itemType2Name,
+            cinemaId as cinemaId,
+            startTime as startTime,
+            endTime as endTime,
+            minPrice as minPrice
+        from dm_item
+        WHERE MONTH(startTime) = #{month} AND YEAR(startTime) = #{year} AND itemType1Id=#{itemType1Id} ORDER BY startTime DESC limit 3
+    </select>
+
 </mapper>

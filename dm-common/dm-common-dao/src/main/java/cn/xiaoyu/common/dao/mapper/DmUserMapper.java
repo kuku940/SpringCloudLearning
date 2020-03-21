@@ -9,7 +9,6 @@ import java.util.Map;
 
 @Mapper
 public interface DmUserMapper {
-
     DmUser getDmUserById(@Param(value = "id") Long id);
 
     List<DmUser> getDmUserListByMap(Map<String, Object> param);
@@ -19,9 +18,4 @@ public interface DmUserMapper {
     Integer insertDmUser(DmUser dmUser);
 
     Integer updateDmUser(DmUser dmUser);
-
-    Integer deleteDmUserById(@Param(value = "id") Long id);
-
-    Integer batchDeleteDmUser(Map<String, List<String>> params);
-
 }

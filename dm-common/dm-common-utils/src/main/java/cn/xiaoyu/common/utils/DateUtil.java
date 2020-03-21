@@ -22,7 +22,7 @@ public class DateUtil {
      * @return 日期字符串格式的集合
      */
     public static List<Date> getBetweenDates(Date start, Date end) {
-        List<Date> result = new ArrayList<Date>();
+        List<Date> result = new ArrayList<>();
         Calendar tempStart = Calendar.getInstance();
         tempStart.setTime(start);
 
@@ -37,11 +37,6 @@ public class DateUtil {
 
     /**
      * 根据日期字符串返回日期
-     *
-     * @param source
-     * @param format
-     * @return
-     * @throws ParseException
      */
     public static final Date parse(String source, String format) throws ParseException {
         DateFormat df = new SimpleDateFormat(format);
@@ -50,39 +45,27 @@ public class DateUtil {
 
     /**
      * 根据日期获取格式化的日期字符串
-     *
-     * @param date
-     * @param format
-     * @return
-     * @throws ParseException
      */
-    public static final String format(Date date, String format) throws ParseException {
+    public static final String format(Date date, String format) {
         DateFormat df = new SimpleDateFormat(format);
         return df.format(date);
     }
 
     /**
      * 根据日期获取格式化的日期字符串，指定默认格式为：yyyy-MM-dd HH:mm:ss
-     *
-     * @param date
-     * @return
-     * @throws ParseException
      */
-    public static final String format(Date date) throws ParseException {
+    public static final String format(Date date) {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return df.format(date);
     }
 
     /**
      * 新增天数
-     * @param sourceDate
-     * @param days
-     * @return
      */
     public static Date addDay(Date sourceDate, Integer days) {
         Calendar calendar = new GregorianCalendar();
         calendar.setTime(sourceDate);
-        calendar.add(calendar.DATE, days);
+        calendar.add(Calendar.DATE, days);
         return calendar.getTime();
     }
 }

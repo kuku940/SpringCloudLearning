@@ -14,18 +14,36 @@ import java.util.Map;
 @FeignClient(name = "dm-order-provider", configuration = DmConfiguration.class, fallback = DmOrderClientFallBack.class)
 public interface RestDmOrderClient {
     @PostMapping(value = "/getDmOrderById")
-    public DmOrder getDmOrderById(@RequestParam("id") Long id);
+    DmOrder getDmOrderById(@RequestParam("id") Long id);
 
     @PostMapping(value = "/getDmOrderListByMap")
-    public List<DmOrder> getDmOrderListByMap(@RequestParam Map<String, Object> param);
+    List<DmOrder> getDmOrderListByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/getDmOrderCountByMap")
-    public Integer getDmOrderCountByMap(@RequestParam Map<String, Object> param);
+    Integer getDmOrderCountByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/qdtxAddDmOrder")
-    public Integer qdtxAddDmOrder(@RequestBody DmOrder dmOrder);
+    Integer qdtxAddDmOrder(@RequestBody DmOrder dmOrder);
 
     @PostMapping(value = "/qdtxModifyDmOrder")
-    public Integer qdtxModifyDmOrder(@RequestBody DmOrder dmOrder);
+    Integer qdtxModifyDmOrder(@RequestBody DmOrder dmOrder);
+
+    @PostMapping(value = "/getDmOrderListByOrderNoOrDate")
+    List<DmOrder> getDmOrderListByOrderNoOrDate(@RequestBody Map<String, Object> param);
+
+    @PostMapping(value = "/getDmOrderByOrderNo")
+    DmOrder getDmOrderByOrderNo(@RequestParam("orderNo") String orderNo);
+
+    @PostMapping(value = "/deleteDmOrderById")
+    Integer deleteDmOrderById(@RequestParam("id") Long id);
+
+    @PostMapping(value = "/flushCancelOrderType")
+    boolean flushCancelOrderType();
+
+    @PostMapping(value = "/getDmOrderByOrderTypeAndTime")
+    List<DmOrder> getDmOrderByOrderTypeAndTime();
+
+    @PostMapping(value = "/processed")
+    boolean processed(@RequestParam("orderNo") String orderNo, @RequestParam("flag") Integer flag);
 }
 

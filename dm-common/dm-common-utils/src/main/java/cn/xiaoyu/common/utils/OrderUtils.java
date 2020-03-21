@@ -1,14 +1,11 @@
 package cn.xiaoyu.common.utils;
 
-import java.text.ParseException;
 import java.util.Date;
 
 public class OrderUtils {
 
     /**
      * 生成订单号
-     *
-     * @return
      */
     public static String createOrderNo() {
         StringBuilder md5String = new StringBuilder();
@@ -18,11 +15,7 @@ public class OrderUtils {
         String md5 = MD5.getMd5(md5String.toString(), 6);
         //生成订单编号
         StringBuilder orderNo = new StringBuilder();
-        try {
-            orderNo.append(DateUtil.format(new Date(), "yyyyMMddHHmmss"));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        orderNo.append(DateUtil.format(new Date(), "yyyyMMddHHmmss"));
         orderNo.append(md5);
         return orderNo.toString();
     }

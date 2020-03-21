@@ -9,7 +9,6 @@ import java.util.Map;
 
 @Mapper
 public interface DmItemTypeMapper {
-
     DmItemType getDmItemTypeById(@Param(value = "id") Long id);
 
     List<DmItemType> getDmItemTypeListByMap(Map<String, Object> param);
@@ -19,8 +18,4 @@ public interface DmItemTypeMapper {
     Integer insertDmItemType(DmItemType dmItemType);
 
     Integer updateDmItemType(DmItemType dmItemType);
-
-    Integer deleteDmItemTypeById(@Param(value = "id") Long id);
-
-    Integer batchDeleteDmItemType(Map<String, List<String>> params);
 }

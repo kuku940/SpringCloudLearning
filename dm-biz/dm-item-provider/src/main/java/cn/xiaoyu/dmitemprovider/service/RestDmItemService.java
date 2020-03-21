@@ -3,7 +3,10 @@ package cn.xiaoyu.dmitemprovider.service;
 import cn.xiaoyu.common.dao.mapper.DmItemMapper;
 import cn.xiaoyu.common.module.pojo.DmItem;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.List;
@@ -14,30 +17,29 @@ public class RestDmItemService {
     @Autowired
     private DmItemMapper dmItemMapper;
 
-    @RequestMapping(value = "/getDmItemById", method = RequestMethod.POST)
-    public DmItem getDmItemById(@RequestParam("id") Long id) throws Exception {
+    @PostMapping(value = "/getDmItemById")
+    public DmItem getDmItemById(@RequestParam("id") Long id) {
         return dmItemMapper.getDmItemById(id);
     }
 
-    @RequestMapping(value = "/getDmItemListByMap", method = RequestMethod.POST)
-    public List<DmItem> getDmItemListByMap(@RequestParam Map<String, Object> param) throws Exception {
-        List<DmItem> list = dmItemMapper.getDmItemListByMap(param);
-        return list;
+    @PostMapping(value = "/getDmItemListByMap")
+    public List<DmItem> getDmItemListByMap(@RequestParam Map<String, Object> param) {
+        return dmItemMapper.getDmItemListByMap(param);
     }
 
-    @RequestMapping(value = "/getDmItemCountByMap", method = RequestMethod.POST)
-    public Integer getDmItemCountByMap(@RequestParam Map<String, Object> param) throws Exception {
+    @PostMapping(value = "/getDmItemCountByMap")
+    public Integer getDmItemCountByMap(@RequestParam Map<String, Object> param) {
         return dmItemMapper.getDmItemCountByMap(param);
     }
 
-    @RequestMapping(value = "/qdtxAddDmItem", method = RequestMethod.POST)
-    public Integer qdtxAddDmItem(@RequestBody DmItem dmItem) throws Exception {
+    @PostMapping(value = "/qdtxAddDmItem")
+    public Integer qdtxAddDmItem(@RequestBody DmItem dmItem) {
         dmItem.setCreatedTime(new Date());
         return dmItemMapper.insertDmItem(dmItem);
     }
 
-    @RequestMapping(value = "/qdtxModifyDmItem", method = RequestMethod.POST)
-    public Integer qdtxModifyDmItem(@RequestBody DmItem dmItem) throws Exception {
+    @PostMapping(value = "/qdtxModifyDmItem")
+    public Integer qdtxModifyDmItem(@RequestBody DmItem dmItem) {
         dmItem.setUpdatedTime(new Date());
         return dmItemMapper.updateDmItem(dmItem);
     }

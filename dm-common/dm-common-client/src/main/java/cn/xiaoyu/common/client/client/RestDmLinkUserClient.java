@@ -14,18 +14,21 @@ import java.util.Map;
 @FeignClient(name = "dm-user-provider", configuration = DmConfiguration.class, fallback = DmLinkUserClientFallBack.class)
 public interface RestDmLinkUserClient {
     @PostMapping(value = "/getDmLinkUserById")
-    public DmLinkUser getDmLinkUserById(@RequestParam("id") Long id);
+    DmLinkUser getDmLinkUserById(@RequestParam("id") Long id);
 
     @PostMapping(value = "/getDmLinkUserListByMap")
-    public List<DmLinkUser> getDmLinkUserListByMap(@RequestParam Map<String, Object> param);
+    List<DmLinkUser> getDmLinkUserListByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/getDmLinkUserCountByMap")
-    public Integer getDmLinkUserCountByMap(@RequestParam Map<String, Object> param);
+    Integer getDmLinkUserCountByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/qdtxAddDmLinkUser")
-    public Integer qdtxAddDmLinkUser(@RequestBody DmLinkUser dmLinkUser);
+    Integer qdtxAddDmLinkUser(@RequestBody DmLinkUser dmLinkUser);
 
     @PostMapping(value = "/qdtxModifyDmLinkUser")
-    public Integer qdtxModifyDmLinkUser(@RequestBody DmLinkUser dmLinkUser);
+    Integer qdtxModifyDmLinkUser(@RequestBody DmLinkUser dmLinkUser);
+
+    @PostMapping(value = "/deleteDmLinkUserById")
+    Integer deleteDmLinkUserById(@RequestParam("id") Long id);
 }
 

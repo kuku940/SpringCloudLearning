@@ -11,22 +11,22 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQUtils {
     @Bean
     public Queue toQgQueue() {
-        return new Queue("TO_QG_QUEUE", true);
+        return new Queue(Constants.RabbitQueueName.TO_QG_QUEUE, true);
     }
 
     @Bean
     public Queue toCreateOrderQueue() {
-        return new Queue("TO_CREATE_ORDER", true);
+        return new Queue(Constants.RabbitQueueName.TO_CREATE_ORDER, true);
     }
 
     @Bean
     public Queue toUpdateOrderQueue() {
-        return new Queue("TO_UPDATED_ORDER_QUEUE", true);
+        return new Queue(Constants.RabbitQueueName.TO_UPDATED_ORDER_QUEUE, true);
     }
 
     @Bean
     public Queue toUpdateGoodsQueue() {
-        return new Queue("TO_UPDATED_GOODS_QUQUE", true);
+        return new Queue(Constants.RabbitQueueName.TO_UPDATED_GOODS_QUQUE, true);
     }
 
     /**
@@ -34,7 +34,7 @@ public class RabbitMQUtils {
      */
     @Bean
     public Queue toResetSeatQueue() {
-        return new Queue("TO_RESET_SEAT_QUQUE", true);
+        return new Queue(Constants.RabbitQueueName.TO_RESET_SEAT_QUQUE, true);
     }
 
     /**
@@ -42,7 +42,7 @@ public class RabbitMQUtils {
      */
     @Bean
     public Queue toDelOrderQueue() {
-        return new Queue("TO_DEL_ORDER_QUQUE", true);
+        return new Queue(Constants.RabbitQueueName.TO_DEL_ORDER_QUQUE, true);
     }
 
     /**
@@ -50,7 +50,7 @@ public class RabbitMQUtils {
      */
     @Bean
     public Queue toResetLinkUserQueue() {
-        return new Queue("TO_RESET_LINKUSER_QUQUE", true);
+        return new Queue(Constants.RabbitQueueName.TO_RESET_LINKUSER_QUQUE, true);
     }
 
     @Bean

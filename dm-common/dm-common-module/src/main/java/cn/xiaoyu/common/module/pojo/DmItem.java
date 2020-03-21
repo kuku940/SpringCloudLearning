@@ -16,13 +16,13 @@ public class DmItem implements Serializable {
     private String itemName;
     //摘要信息
     private String abstractMessage;
-    //节目类型管理ID
+    //节目类型1管理ID
     private Long itemType1Id;
-    //节目名称
+    //节目类型1名称
     private String itemType1Name;
-    //节目类型管理ID
+    //节目类型2管理ID
     private Long itemType2Id;
-    //节目名称
+    //节目类型2名称
     private String itemType2Name;
     //状态(1:项目待定2:预售/预订3:开始售票4:演出开始)
     private Integer state;

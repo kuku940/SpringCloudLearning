@@ -14,18 +14,18 @@ import java.util.Map;
 @FeignClient(name = "dm-scheduler-provider", configuration = DmConfiguration.class, fallback = DmTradeClientFallBack.class)
 public interface RestDmTradeClient {
     @PostMapping(value = "/getDmTradeById")
-    public DmTrade getDmTradeById(@RequestParam("id") Long id);
+    DmTrade getDmTradeById(@RequestParam("id") Long id);
 
     @PostMapping(value = "/getDmTradeListByMap")
-    public List<DmTrade> getDmTradeListByMap(@RequestParam Map<String, Object> param);
+    List<DmTrade> getDmTradeListByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/getDmTradeCountByMap")
-    public Integer getDmTradeCountByMap(@RequestParam Map<String, Object> param);
+    Integer getDmTradeCountByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/qdtxAddDmTrade")
-    public Integer qdtxAddDmTrade(@RequestBody DmTrade dmTrade);
+    Integer qdtxAddDmTrade(@RequestBody DmTrade dmTrade);
 
     @PostMapping(value = "/qdtxModifyDmTrade")
-    public Integer qdtxModifyDmTrade(@RequestBody DmTrade dmTrade);
+    Integer qdtxModifyDmTrade(@RequestBody DmTrade dmTrade);
 }
 

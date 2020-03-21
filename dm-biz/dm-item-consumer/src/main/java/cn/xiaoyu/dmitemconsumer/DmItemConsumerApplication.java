@@ -7,7 +7,7 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients
+@EnableFeignClients("cn.xiaoyu.*")
 public class DmItemConsumerApplication {
     public static void main(String[] args) {
         SpringApplication.run(DmItemConsumerApplication.class, args);

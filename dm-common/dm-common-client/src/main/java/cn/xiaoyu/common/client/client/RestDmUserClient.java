@@ -14,19 +14,31 @@ import java.util.Map;
 
 @FeignClient(name = "dm-user-provider", configuration = DmConfiguration.class, fallback = DmUserClientFallBack.class)
 public interface RestDmUserClient {
+    @PostMapping(value = "/checkLoginByPassword")
+    DmUser checkLoginByPassword(@RequestBody DmUser dmUser);
+
     @PostMapping(value = "/getDmUserById")
-    public DmUser getDmUserById(@RequestParam("id") Long id);
+    DmUser getDmUserById(@RequestParam("id") Long id);
 
     @PostMapping(value = "/getDmUserListByMap")
-    public List<DmUser> getDmUserListByMap(@RequestParam Map<String, Object> param);
+    List<DmUser> getDmUserListByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/getDmUserCountByMap")
-    public Integer getDmUserCountByMap(@RequestParam Map<String, Object> param);
+    Integer getDmUserCountByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/qdtxAddDmUser")
-    public Integer qdtxAddDmUser(@RequestBody DmUser dmUser);
+    Integer qdtxAddDmUser(@RequestBody DmUser dmUser);
 
     @PostMapping(value = "/qdtxModifyDmUser")
-    public Integer qdtxModifyDmUser(@RequestBody DmUser dmUser);
+    Integer qdtxModifyDmUser(@RequestBody DmUser dmUser);
+
+    @PostMapping(value = "/findByWxUserId")
+    DmUser findByWxUserId(@RequestParam("wxUserId") String wxUserId);
+
+    @PostMapping(value = "/createuser")
+    Long createDmUser(@RequestBody DmUser dmUser);
+
+    @PostMapping(value = "/generateToken")
+    String generateToken(@RequestBody DmUser dmUser);
 }
 

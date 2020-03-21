@@ -9,7 +9,6 @@ import java.util.Map;
 
 @Mapper
 public interface DmSchedulerSeatMapper {
-
     DmSchedulerSeat getDmSchedulerSeatById(@Param(value = "id") Long id);
 
     List<DmSchedulerSeat> getDmSchedulerSeatListByMap(Map<String, Object> param);
@@ -20,8 +19,7 @@ public interface DmSchedulerSeatMapper {
 
     Integer updateDmSchedulerSeat(DmSchedulerSeat dmSchedulerSeat);
 
-    Integer deleteDmSchedulerSeatById(@Param(value = "id") Long id);
-
-    Integer batchDeleteDmSchedulerSeat(Map<String, List<String>> params);
-
+    DmSchedulerSeat getDmSchedulerSeatByOrder(@Param(value = "scheduleId") Long scheduleId,
+                                              @Param(value = "x") Integer x,
+                                              @Param(value = "y") Integer y);
 }

@@ -9,7 +9,6 @@ import java.util.Map;
 
 @Mapper
 public interface DmSchedulerSeatPriceMapper {
-
     DmSchedulerSeatPrice getDmSchedulerSeatPriceById(@Param(value = "id") Long id);
 
     List<DmSchedulerSeatPrice> getDmSchedulerSeatPriceListByMap(Map<String, Object> param);
@@ -20,8 +19,6 @@ public interface DmSchedulerSeatPriceMapper {
 
     Integer updateDmSchedulerSeatPrice(DmSchedulerSeatPrice dmSchedulerSeatPrice);
 
-    Integer deleteDmSchedulerSeatPriceById(@Param(value = "id") Long id);
-
-    Integer batchDeleteDmSchedulerSeatPrice(Map<String, List<String>> params);
-
+    DmSchedulerSeatPrice getDmSchedulerSeatPriceBySchedulerIdAndArea(@Param(value = "areaLevel") Integer areaLevel,
+                                                                     @Param(value = "scheduleId") Long scheduleId);
 }

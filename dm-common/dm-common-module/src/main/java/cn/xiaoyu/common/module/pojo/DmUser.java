@@ -1,12 +1,13 @@
 package cn.xiaoyu.common.module.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
 
 /**
- *   用户表
+ * 用户表
  */
 @Data
 public class DmUser implements Serializable {
@@ -29,9 +30,12 @@ public class DmUser implements Serializable {
     //身份证号
     private String idCard;
     //生日
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd")
     private Date birthday;
     //创建时间
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createdTime;
-    //修改时间
+    //更新时间
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updatedTime;
 }

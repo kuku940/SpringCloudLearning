@@ -20,7 +20,5 @@ public interface DmCinemaSeatMapper {
 
     Integer updateDmCinemaSeat(DmCinemaSeat dmCinemaSeat);
 
-    Integer deleteDmCinemaSeatById(@Param(value = "id") Long id);
-
-    Integer batchDeleteDmCinemaSeat(Map<String, List<String>> params);
+    List<String> queryCinemaSeatArray(Map<String, Object> params);
 }

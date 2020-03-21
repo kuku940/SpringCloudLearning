@@ -147,7 +147,7 @@ public class RedisUtils {
             String lockKey = generateLockKey(key);
             flag = setnx(lockKey, "lock");
             if (flag) {
-                Boolean expire = expire(lockKey, Constants.Redis_Expire.DEFAULT_EXPIRE);
+                Boolean expire = expire(lockKey, Constants.RedisExpire.DEFAULT_EXPIRE);
                 logger.info("key expired {}", expire);
             }
             return flag;

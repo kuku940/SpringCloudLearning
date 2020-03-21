@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: dm-item-consumer
+  aop:
+    proxy-target-class: true
 eureka:
   instance:
     prefer-ip-address: true

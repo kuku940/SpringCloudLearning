@@ -16,17 +16,17 @@ import java.util.Map;
 public interface RestDmAreaClient {
 
     @PostMapping(value = "/getDmAreaById")
-    public DmArea getDmAreaById(@RequestParam("id") Long id);
+    DmArea getDmAreaById(@RequestParam("id") Long id);
 
     @PostMapping(value = "/getDmAreaListByMap")
-    public List<DmArea> getDmAreaListByMap(@RequestParam Map<String, Object> param);
+    List<DmArea> getDmAreaListByMap(@RequestBody Map<String, Object> param);
 
     @PostMapping(value = "/getDmAreaCountByMap")
-    public Integer getDmAreaCountByMap(@RequestParam Map<String, Object> param);
+    Integer getDmAreaCountByMap(@RequestBody Map<String, Object> param);
 
     @PostMapping(value = "/qdtxAddDmArea")
-    public Integer qdtxAddDmArea(@RequestBody DmArea dmArea);
+    Integer qdtxAddDmArea(@RequestBody DmArea dmArea);
 
     @PostMapping(value = "/qdtxModifyDmArea")
-    public Integer qdtxModifyDmArea(@RequestBody DmArea dmArea);
+    Integer qdtxModifyDmArea(@RequestBody DmArea dmArea);
 }

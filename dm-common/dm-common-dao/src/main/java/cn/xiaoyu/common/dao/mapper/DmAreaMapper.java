@@ -19,9 +19,4 @@ public interface DmAreaMapper {
     Integer insertDmArea(DmArea dmArea);
 
     Integer updateDmArea(DmArea dmArea);
-
-    Integer deleteDmAreaById(@Param(value = "id") Long id);
-
-    Integer batchDeleteDmArea(Map<String, List<String>> params);
-
 }

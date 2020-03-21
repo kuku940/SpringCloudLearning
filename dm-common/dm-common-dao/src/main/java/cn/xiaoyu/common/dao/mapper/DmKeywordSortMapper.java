@@ -19,9 +19,4 @@ public interface DmKeywordSortMapper {
     Integer insertDmKeywordSort(DmKeywordSort dmKeywordSort);
 
     Integer updateDmKeywordSort(DmKeywordSort dmKeywordSort);
-
-    Integer deleteDmKeywordSortById(@Param(value = "id") Long id);
-
-    Integer batchDeleteDmKeywordSort(Map<String, List<String>> params);
-
 }

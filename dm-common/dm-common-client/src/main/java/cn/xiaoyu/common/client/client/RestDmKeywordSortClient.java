@@ -15,17 +15,17 @@ import java.util.Map;
 public interface RestDmKeywordSortClient {
 
     @PostMapping(value = "/getDmKeywordSortById")
-    public DmKeywordSort getDmKeywordSortById(@RequestParam("id") Long id);
+    DmKeywordSort getDmKeywordSortById(@RequestParam("id") Long id);
 
     @PostMapping(value = "/getDmKeywordSortListByMap")
-    public List<DmKeywordSort> getDmKeywordSortListByMap(@RequestParam Map<String, Object> param);
+    List<DmKeywordSort> getDmKeywordSortListByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/getDmKeywordSortCountByMap")
-    public Integer getDmKeywordSortCountByMap(@RequestParam Map<String, Object> param);
+    Integer getDmKeywordSortCountByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/qdtxAddDmKeywordSort")
-    public Integer qdtxAddDmKeywordSort(@RequestBody DmKeywordSort dmKeywordSort);
+    Integer qdtxAddDmKeywordSort(@RequestBody DmKeywordSort dmKeywordSort);
 
     @PostMapping(value = "/qdtxModifyDmKeywordSort")
-    public Integer qdtxModifyDmKeywordSort(@RequestBody DmKeywordSort dmKeywordSort);
+    Integer qdtxModifyDmKeywordSort(@RequestBody DmKeywordSort dmKeywordSort);
 }

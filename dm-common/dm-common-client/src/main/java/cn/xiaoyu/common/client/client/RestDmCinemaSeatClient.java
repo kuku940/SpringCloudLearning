@@ -15,18 +15,21 @@ import java.util.Map;
 @FeignClient(name = "dm-user-provider", configuration = DmConfiguration.class, fallback = DmCinemaSeatClientFallBack.class)
 public interface RestDmCinemaSeatClient {
     @PostMapping(value = "/getDmCinemaSeatById")
-    public DmCinemaSeat getDmCinemaSeatById(@RequestParam("id") Long id);
+    DmCinemaSeat getDmCinemaSeatById(@RequestParam("id") Long id);
 
     @PostMapping(value = "/getDmCinemaSeatListByMap")
-    public List<DmCinemaSeat> getDmCinemaSeatListByMap(@RequestParam Map<String, Object> param);
+    List<DmCinemaSeat> getDmCinemaSeatListByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/getDmCinemaSeatCountByMap")
-    public Integer getDmCinemaSeatCountByMap(@RequestParam Map<String, Object> param);
+    Integer getDmCinemaSeatCountByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/qdtxAddDmCinemaSeat")
-    public Integer qdtxAddDmCinemaSeat(@RequestBody DmCinemaSeat dmCinemaSeat);
+    Integer qdtxAddDmCinemaSeat(@RequestBody DmCinemaSeat dmCinemaSeat);
 
     @PostMapping(value = "/qdtxModifyDmCinemaSeat")
-    public Integer qdtxModifyDmCinemaSeat(@RequestBody DmCinemaSeat dmCinemaSeat);
+    Integer qdtxModifyDmCinemaSeat(@RequestBody DmCinemaSeat dmCinemaSeat);
+
+    @PostMapping(value = "/queryCinemaSeatArray")
+    List<String> queryCinemaSeatArray(@RequestBody Map<String, Object> params);
 }
 

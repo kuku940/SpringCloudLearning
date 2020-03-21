@@ -14,18 +14,18 @@ import java.util.Map;
 @FeignClient(name = "dm-user-provider", configuration = DmConfiguration.class, fallback = DmCinemaClientFallBack.class)
 public interface RestDmCinemaClient {
     @PostMapping(value = "/getDmCinemaById")
-    public DmCinema getDmCinemaById(@RequestParam("id") Long id);
+    DmCinema getDmCinemaById(@RequestParam("id") Long id);
 
     @PostMapping(value = "/getDmCinemaListByMap")
-    public List<DmCinema> getDmCinemaListByMap(@RequestParam Map<String, Object> param);
+    List<DmCinema> getDmCinemaListByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/getDmCinemaCountByMap")
-    public Integer getDmCinemaCountByMap(@RequestParam Map<String, Object> param);
+    Integer getDmCinemaCountByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/qdtxAddDmCinema")
-    public Integer qdtxAddDmCinema(@RequestBody DmCinema dmCinema);
+    Integer qdtxAddDmCinema(@RequestBody DmCinema dmCinema);
 
     @PostMapping(value = "/qdtxModifyDmCinema")
-    public Integer qdtxModifyDmCinema(@RequestBody DmCinema dmCinema);
+    Integer qdtxModifyDmCinema(@RequestBody DmCinema dmCinema);
 }
 

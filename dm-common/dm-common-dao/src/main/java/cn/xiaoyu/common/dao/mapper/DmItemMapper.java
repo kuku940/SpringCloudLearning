@@ -20,7 +20,9 @@ public interface DmItemMapper {
 
     Integer updateDmItem(DmItem dmItem);
 
-    Integer deleteDmItemById(@Param(value = "id") Long id);
+    List<DmItem> getHotDmItemList(Map<String, Object> param);
 
-    Integer batchDeleteDmItem(Map<String, List<String>> params);
+    List<DmItem> getItemByMonth(Map<String, Object> params);
+
+    List<DmItem> getHotDmItemListForEs(Map<String, Object> param);
 }

@@ -14,18 +14,21 @@ import java.util.Map;
 @FeignClient(name = "dm-user-provider", configuration = DmConfiguration.class, fallback = DmSchedulerClientFallBack.class)
 public interface RestDmSchedulerClient {
     @PostMapping(value = "/getDmSchedulerById")
-    public DmScheduler getDmSchedulerById(@RequestParam("id") Long id);
+    DmScheduler getDmSchedulerById(@RequestParam("id") Long id);
 
     @PostMapping(value = "/getDmSchedulerListByMap")
-    public List<DmScheduler> getDmSchedulerListByMap(@RequestParam Map<String, Object> param);
+    List<DmScheduler> getDmSchedulerListByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/getDmSchedulerCountByMap")
-    public Integer getDmSchedulerCountByMap(@RequestParam Map<String, Object> param);
+    Integer getDmSchedulerCountByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/qdtxAddDmScheduler")
-    public Integer qdtxAddDmScheduler(@RequestBody DmScheduler dmScheduler);
+    Integer qdtxAddDmScheduler(@RequestBody DmScheduler dmScheduler);
 
     @PostMapping(value = "/qdtxModifyDmScheduler")
-    public Integer qdtxModifyDmScheduler(@RequestBody DmScheduler dmScheduler);
+    Integer qdtxModifyDmScheduler(@RequestBody DmScheduler dmScheduler);
+
+    @PostMapping(value = "/getDmSchedulerByItemId")
+    DmScheduler getDmSchedulerByItemId(@RequestParam("itemId") Long itemId);
 }
 

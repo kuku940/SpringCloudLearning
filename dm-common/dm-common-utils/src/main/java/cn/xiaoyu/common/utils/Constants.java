@@ -1,7 +1,6 @@
 package cn.xiaoyu.common.utils;
 
 public class Constants {
-
     //异常码定义
     public static class ErrorCode {
         //通用状态码 00**
@@ -12,108 +11,88 @@ public class Constants {
         }
     }
 
+    public static final String BEGIN_POS = "beginPos";
+    public static final String PAGE_SIZE = "pageSize";
+
     public static class Image {
         //0:无类型 1:轮播图 2:海报图
         public static class ImageType {
             //无类型
-            public static Integer normal = 0;
+            public static final Integer NORMAL = 0;
             //轮播图
-            public static Integer carousel = 1;
+            public static final Integer CAROUSEL = 1;
             //海报图
-            public static Integer poster = 2;
+            public static final Integer POSTER = 2;
         }
 
         //图片分类
         public static class ImageCategory {
-            public static Integer user = 0; //用户模块
-            public static Integer item = 1; //商品模块
+            public static final Integer USER = 0; //用户模块
+            public static final Integer ITEM = 1; //商品模块
         }
     }
 
-    public static class Redis_Expire {
+    public static class RedisExpire {
         public static final long DEFAULT_EXPIRE = 60;//80s 有慢sql，超时时间设置长一点
-        public final static int SESSION_TIMEOUT = 2 * 60 * 60;//默认2h
-        public final static int REPLACEABLE_TIME_RANGE = 32 * 60;
-        public final static int REPLACEMENT_PROTECTION_TIMEOUT = SESSION_TIMEOUT - REPLACEABLE_TIME_RANGE;//默认1.5h
-        public final static int REPLACEMENT_DELAY = 2 * 60;//默认2min
+        public static final int SESSION_TIMEOUT = 2 * 60 * 60;//默认2h
+        public static final int REPLACEABLE_TIME_RANGE = 32 * 60;
+        public static final int REPLACEMENT_PROTECTION_TIMEOUT = SESSION_TIMEOUT - REPLACEABLE_TIME_RANGE;//默认1.5h
+        public static final int REPLACEMENT_DELAY = 2 * 60;//默认2min
     }
 
     public static class OrderStatus {
-        public final static Integer TOPAY = 0;//待支付
+        public static final Integer TOPAY = 0;//待支付
         public static final Integer SUCCESS = 2;//支付成功
-        public final static Integer FAIL = -1;//支付失败
-        public final static Integer ISNEEDINSURANCE_NO = 0;//不需要保险
-        public final static Integer ISNEEDINSURANCE_YES = 1;//需要保险
-        public final static Double NEEDINSURANCE_MONEY = 20.0;//保险金额
+        public static final Integer FAIL = -1;//支付失败
+        public static final Integer ISNEEDINSURANCE_NO = 0;//不需要保险
+        public static final Integer ISNEEDINSURANCE_YES = 1;//需要保险
+        public static final Double NEEDINSURANCE_MONEY = 20.0;//保险金额
     }
 
     /**
      * 座位表状态常量
      */
     public static class SchedulerSeatStatus {
-        public final static Integer SchedulerSeat_FREE = 1;//空闲待购买
-        public final static Integer SchedulerSeat_TOPAY = 2;//锁定待付款
-        public static final Integer SchedulerSeat_PAYSUCCESS = 3;//支付成功
+        public static final Integer SCHEDULER_SEAT_FREE = 1;//空闲待购买
+        public static final Integer SCHEDULER_SEAT_TOPAY = 2;//锁定待付款
+        public static final Integer SCHEDULER_SEAT_PAYSUCCESS = 3;//支付成功
     }
 
     public static class QueueName {
-        public final static String TO_QG_QUEUE = "toQgQueue";
-        public final static String TO_CREATE_ORDER = "toCreateOrder";
+        public static final String TO_QG_QUEUE = "toQgQueue";
+        public static final String TO_CREATE_ORDER = "toCreateOrder";
 
-        public final static String TO_UPDATED_ORDER_QUEUE = "toUpdateOrderQueue";
+        public static final String TO_UPDATED_ORDER_QUEUE = "toUpdateOrderQueue";
 
-        public final static String TO_UPDATED_GOODS_QUQUE = "toUpdateGoodsQueue";
+        public static final String TO_UPDATED_GOODS_QUQUE = "toUpdateGoodsQueue";
     }
 
     public static class RabbitQueueName {
-        public final static String TO_QG_QUEUE = "toQgQueue";
-        public final static String TO_CREATE_ORDER = "toCreateOrder";
-        public final static String TO_UPDATED_ORDER_QUEUE = "toUpdateOrderQueue";
-        public final static String TO_UPDATED_GOODS_QUQUE = "toUpdateGoodsQueue";
+        public static final String TO_QG_QUEUE = "toQgQueue";
+        public static final String TO_CREATE_ORDER = "toCreateOrder";
+        public static final String TO_UPDATED_ORDER_QUEUE = "toUpdateOrderQueue";
+        public static final String TO_UPDATED_GOODS_QUQUE = "toUpdateGoodsQueue";
 
-        public final static String TO_RESET_SEAT_QUQUE = "toResetSeatQueue";//重置座位队列
-        public final static String TO_DEL_ORDER_QUQUE = "toDelOrderQueue";//删除订单队列
-        public final static String TO_RESET_LINKUSER_QUQUE = "toResetLinkUserQueue";//重置联系人队列
+        public static final String TO_RESET_SEAT_QUQUE = "toResetSeatQueue";//重置座位队列
+        public static final String TO_DEL_ORDER_QUQUE = "toDelOrderQueue";//删除订单队列
+        public static final String TO_RESET_LINKUSER_QUQUE = "toResetLinkUserQueue";//重置联系人队列
 
-        public final static String TOPIC_EXCHANGE = "topicExchange";
-    }
-
-    public static class QgStatus {
-        public final static String fail = "-1";//拿到商品
-        public final static String getGoods = "1";//拿到商品
-        public final static String getOrder = "2";//生成订单
-        public final static String paySuccess = "3"; //支付成功
-    }
-
-    public static class WxpayStatus {
-        public final static String DDZTYC = "4001";
-        public final static String DDZFYC = "4002";
-        public final static String DDYXYC = "4003";
+        public static final String TOPIC_EXCHANGE = "topicExchange";
     }
 
     //状态(0:锁定库存,1:成功支付,2:支付超时)
 
-    public static class StockStatus {
-        public final static Integer lock = 0;//锁定库存
-        public final static Integer success = 1;//支付成功
-        public final static Integer cancel = 2;//支付超时
+    public static class QgStatus {
+        public static final String FAIL = "-1";//拿到商品
+        public static final String GET_GOODS = "1";//拿到商品
+        public static final String GET_ORDER = "2";//生成订单
+        public static final String PAY_SUCCESS = "3"; //支付成功
     }
 
-    public static class TOPIC {
-        public final static String ORDER_CONSUMER = "order_consumer";
-        public final static String ORDER_PROVIDER = "order_provider";
-        public final static String ITEM_CONSUMER = "item_consumer";
-        public final static String ITEM_PROVIDER = "item_provider";
-        public final static String BASE_CONSUMER = "base_consumer";
-        public final static String BASE_PROVIDER = "base_provider";
-        public final static String PAY_CONSUMER = "pay_consumer";
-        public final static String PAY_PROVIDER = "pay_provider";
-        public final static String SCHEDULER_CONSUMER = "scheduler_consumer";
-        public final static String SCHEDULER_PROVIDER = "scheduler_provider";
-        public final static String USER_CONSUMER = "user_consumer";
-        public final static String USER_PROVIDER = "user_provider";
-        public final static String GATEWAY_ZUUL = "gateway_zuul";
-        public final static String ITEM_SEARCH = "item_search";
+    public static class WxpayStatus {
+        public static final String DDZTYC = "4001";
+        public static final String DDZFYC = "4002";
+        public static final String DDYXYC = "4003";
     }
 
     public static final String USER_TOKEN_PREFIX = "userToken:";
@@ -134,8 +113,31 @@ public class Constants {
 
     public static final Integer DEFAULT_PAGE_SIZE = 10;
 
+    public static class StockStatus {
+        public static final Integer LOCK = 0;//锁定库存
+        public static final Integer SUCCESS = 1;//支付成功
+        public static final Integer CANCEL = 2;//支付超时
+    }
+
+    public static class TOPIC {
+        public static final String ORDER_CONSUMER = "order_consumer";
+        public static final String ORDER_PROVIDER = "order_provider";
+        public static final String ITEM_CONSUMER = "item_consumer";
+        public static final String ITEM_PROVIDER = "item_provider";
+        public static final String BASE_CONSUMER = "base_consumer";
+        public static final String BASE_PROVIDER = "base_provider";
+        public static final String PAY_CONSUMER = "pay_consumer";
+        public static final String PAY_PROVIDER = "pay_provider";
+        public static final String SCHEDULER_CONSUMER = "scheduler_consumer";
+        public static final String SCHEDULER_PROVIDER = "scheduler_provider";
+        public static final String USER_CONSUMER = "user_consumer";
+        public static final String USER_PROVIDER = "user_provider";
+        public static final String GATEWAY_ZUUL = "gateway_zuul";
+        public static final String ITEM_SEARCH = "item_search";
+    }
+
     public static class PayMethod {
-        public final static int WEIXIN = 1;
-        public final static int ZHIFUBAO = 2;
+        public static final int WEIXIN = 1;
+        public static final int ZHIFUBAO = 2;
     }
 }

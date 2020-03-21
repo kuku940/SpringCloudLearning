@@ -3,7 +3,10 @@ package cn.xiaoyu.dmitemprovider.service;
 import cn.xiaoyu.common.dao.mapper.DmItemCommentMapper;
 import cn.xiaoyu.common.module.pojo.DmItemComment;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.List;
@@ -14,29 +17,29 @@ public class RestDmItemCommentService {
     @Autowired
     private DmItemCommentMapper dmItemCommentMapper;
 
-    @RequestMapping(value = "/getDmItemCommentById", method = RequestMethod.POST)
-    public DmItemComment getDmItemCommentById(@RequestParam("id") Long id) throws Exception {
+    @PostMapping(value = "/getDmItemCommentById")
+    public DmItemComment getDmItemCommentById(@RequestParam("id") Long id) {
         return dmItemCommentMapper.getDmItemCommentById(id);
     }
 
-    @RequestMapping(value = "/getDmItemCommentListByMap", method = RequestMethod.POST)
-    public List<DmItemComment> getDmItemCommentListByMap(@RequestParam Map<String, Object> param) throws Exception {
+    @PostMapping(value = "/getDmItemCommentListByMap")
+    public List<DmItemComment> getDmItemCommentListByMap(@RequestParam Map<String, Object> param) {
         return dmItemCommentMapper.getDmItemCommentListByMap(param);
     }
 
-    @RequestMapping(value = "/getDmItemCommentCountByMap", method = RequestMethod.POST)
-    public Integer getDmItemCommentCountByMap(@RequestParam Map<String, Object> param) throws Exception {
+    @PostMapping(value = "/getDmItemCommentCountByMap")
+    public Integer getDmItemCommentCountByMap(@RequestParam Map<String, Object> param) {
         return dmItemCommentMapper.getDmItemCommentCountByMap(param);
     }
 
-    @RequestMapping(value = "/qdtxAddDmItemComment", method = RequestMethod.POST)
-    public Integer qdtxAddDmItemComment(@RequestBody DmItemComment dmItemComment) throws Exception {
+    @PostMapping(value = "/qdtxAddDmItemComment")
+    public Integer qdtxAddDmItemComment(@RequestBody DmItemComment dmItemComment) {
         dmItemComment.setCreatedTime(new Date());
         return dmItemCommentMapper.insertDmItemComment(dmItemComment);
     }
 
-    @RequestMapping(value = "/qdtxModifyDmItemComment", method = RequestMethod.POST)
-    public Integer qdtxModifyDmItemComment(@RequestBody DmItemComment dmItemComment) throws Exception {
+    @PostMapping(value = "/qdtxModifyDmItemComment")
+    public Integer qdtxModifyDmItemComment(@RequestBody DmItemComment dmItemComment) {
         dmItemComment.setUpdatedTime(new Date());
         return dmItemCommentMapper.updateDmItemComment(dmItemComment);
     }

@@ -10,7 +10,7 @@ import java.util.Date;
  */
 @Data
 public class DmLinkUser implements Serializable {
-    //
+    //主键
     private Long id;
     //对应用户表的主键
     private Long userId;
@@ -22,6 +22,6 @@ public class DmLinkUser implements Serializable {
     private Integer cardType;
     //创建时间
     private Date createdTime;
-    //修改时间
+    //更新时间
     private Date updatedTime;
 }

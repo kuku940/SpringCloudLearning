@@ -14,18 +14,22 @@ import java.util.Map;
 @FeignClient(name = "dm-user-provider", configuration = DmConfiguration.class, fallback = DmSchedulerSeatPriceClientFallBack.class)
 public interface RestDmSchedulerSeatPriceClient {
     @PostMapping(value = "/getDmSchedulerSeatPriceById")
-    public DmSchedulerSeatPrice getDmSchedulerSeatPriceById(@RequestParam("id") Long id);
+    DmSchedulerSeatPrice getDmSchedulerSeatPriceById(@RequestParam("id") Long id);
 
     @PostMapping(value = "/getDmSchedulerSeatPriceListByMap")
-    public List<DmSchedulerSeatPrice> getDmSchedulerSeatPriceListByMap(@RequestParam Map<String, Object> param);
+    List<DmSchedulerSeatPrice> getDmSchedulerSeatPriceListByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/getDmSchedulerSeatPriceCountByMap")
-    public Integer getDmSchedulerSeatPriceCountByMap(@RequestParam Map<String, Object> param);
+    Integer getDmSchedulerSeatPriceCountByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/qdtxAddDmSchedulerSeatPrice")
-    public Integer qdtxAddDmSchedulerSeatPrice(@RequestBody DmSchedulerSeatPrice dmSchedulerSeatPrice);
+    Integer qdtxAddDmSchedulerSeatPrice(@RequestBody DmSchedulerSeatPrice dmSchedulerSeatPrice);
 
     @PostMapping(value = "/qdtxModifyDmSchedulerSeatPrice")
-    public Integer qdtxModifyDmSchedulerSeatPrice(@RequestBody DmSchedulerSeatPrice dmSchedulerSeatPrice);
+    Integer qdtxModifyDmSchedulerSeatPrice(@RequestBody DmSchedulerSeatPrice dmSchedulerSeatPrice);
+
+    @PostMapping(value = "/getDmSchedulerSeatPriceBySchedulerIdAndArea")
+    DmSchedulerSeatPrice getDmSchedulerSeatPriceBySchedulerIdAndArea(@RequestParam(value = "areaLevel") Integer areaLevel,
+                                                                     @RequestParam(value = "scheduleId") Long scheduleId);
 }
 

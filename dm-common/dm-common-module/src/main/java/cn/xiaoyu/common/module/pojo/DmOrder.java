@@ -20,7 +20,7 @@ public class DmOrder implements Serializable {
     private Long schedulerId;
     //剧集Id(冗余)
     private Long itemId;
-    //
+    //剧集名称（冗余）
     private String itemName;
     //微信交易号
     private String wxTradeNo;

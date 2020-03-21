@@ -321,4 +321,86 @@
             </if>
         </trim>
     </update>
+
+    <!-- 订单管理，根据订单状态/时间/订单号查询 -->
+    <select id="getDmOrderListByOrderNoOrDate" resultType="cn.xiaoyu.common.module.pojo.DmOrder"
+            parameterType="java.util.Map">
+        select
+        id as id,
+        orderNo as orderNo,
+        userId as userId,
+        schedulerId as schedulerId,
+        itemId as itemId,
+        itemName as itemName,
+        wxTradeNo as wxTradeNo,
+        aliTradeNo as aliTradeNo,
+        orderType as orderType,
+        payType as payType,
+        totalCount as totalCount,
+        sourceType as sourceType,
+        isNeedInvoice as isNeedInvoice,
+        invoiceType as invoiceType,
+        invoiceHead as invoiceHead,
+        invoiceNo as invoiceNo,
+        isNeedInsurance as isNeedInsurance,
+        totalAmount as totalAmount,
+        insuranceAmount as insuranceAmount,
+        createdTime as createdTime,
+        updatedTime as updatedTime
+        from dm_order
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="orderTime != null and orderTime == 1">
+                and createdTime >= DATE_ADD(NOW(), INTERVAL - 1 YEAR)
+            </if>
+            <if test="orderTime != null and orderTime == 2">
+                and createdTime >= DATE_ADD(NOW(), INTERVAL - 3 MONTH)
+            </if>
+            <if test="userId != null">
+                and userId=#{userId}
+            </if>
+            <if test="orderType != null">
+                and orderType=#{orderType}
+            </if>
+            <if test="orderNo != null and orderNo!=''">
+                and ( orderNo LIKE #{orderNo}
+            </if>
+            <if test="itemName != null and itemName!=''">
+                OR itemName LIKE #{itemName} )
+            </if>
+        </trim>
+        <if test="beginPos != null and pageSize != null ">
+            limit #{beginPos},#{pageSize}
+        </if>
+    </select>
+
+    <update id="flushCancelOrderType">
+        update dm_order set orderType=-1 where orderType=0 and timestampdiff(SECOND, createdTime, NOW()) >= 2 * 3600
+    </update>
+
+    <select id="getDmOrderByOrderTypeAndTime" resultType="cn.xiaoyu.common.module.pojo.DmOrder">
+        select
+        id as id,
+        orderNo as orderNo,
+        userId as userId,
+        schedulerId as schedulerId,
+        itemId as itemId,
+        itemName as itemName,
+        wxTradeNo as wxTradeNo,
+        aliTradeNo as aliTradeNo,
+        orderType as orderType,
+        payType as payType,
+        totalCount as totalCount,
+        sourceType as sourceType,
+        isNeedInvoice as isNeedInvoice,
+        invoiceType as invoiceType,
+        invoiceHead as invoiceHead,
+        invoiceNo as invoiceNo,
+        isNeedInsurance as isNeedInsurance,
+        totalAmount as totalAmount,
+        insuranceAmount as insuranceAmount,
+        createdTime as createdTime,
+        updatedTime as updatedTime
+        from dm_order
+        where orderType=-1 and timestampdiff(SECOND, createdTime, NOW()) >= 2 * 3600
+    </select>
 </mapper>

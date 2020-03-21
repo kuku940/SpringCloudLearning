@@ -19,9 +19,4 @@ public interface DmLinkUserMapper {
     Integer insertDmLinkUser(DmLinkUser dmLinkUser);
 
     Integer updateDmLinkUser(DmLinkUser dmLinkUser);
-
-    Integer deleteDmLinkUserById(@Param(value = "id") Long id);
-
-    Integer batchDeleteDmLinkUser(Map<String, List<String>> params);
-
 }

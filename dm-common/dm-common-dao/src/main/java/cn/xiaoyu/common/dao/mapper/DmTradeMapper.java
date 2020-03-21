@@ -9,7 +9,6 @@ import java.util.Map;
 
 @Mapper
 public interface DmTradeMapper {
-
     DmTrade getDmTradeById(@Param(value = "id") Long id);
 
     List<DmTrade> getDmTradeListByMap(Map<String, Object> param);
@@ -19,9 +18,4 @@ public interface DmTradeMapper {
     Integer insertDmTrade(DmTrade dmTrade);
 
     Integer updateDmTrade(DmTrade dmTrade);
-
-    Integer deleteDmTradeById(@Param(value = "id") Long id);
-
-    Integer batchDeleteDmTrade(Map<String, List<String>> params);
-
 }

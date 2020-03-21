@@ -19,8 +19,4 @@ public interface DmImageMapper {
     Integer insertDmImage(DmImage dmImage);
 
     Integer updateDmImage(DmImage dmImage);
-
-    Integer deleteDmImageById(@Param(value = "id") Long id);
-
-    Integer batchDeleteDmImage(Map<String, List<String>> params);
 }

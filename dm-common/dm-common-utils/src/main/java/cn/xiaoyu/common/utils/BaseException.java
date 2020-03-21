@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * 通用异常的处理
  */
-public class BaseException extends Exception {
+public class BaseException extends RuntimeException {
     private static final long serialVersionUID = 1L;
     private IErrorCode iErrorCode;
     private String errorCode;

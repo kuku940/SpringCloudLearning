@@ -19,9 +19,4 @@ public interface DmCinemaMapper {
     Integer insertDmCinema(DmCinema dmCinema);
 
     Integer updateDmCinema(DmCinema dmCinema);
-
-    Integer deleteDmCinemaById(@Param(value = "id") Long id);
-
-    Integer batchDeleteDmCinema(Map<String, List<String>> params);
-
 }
