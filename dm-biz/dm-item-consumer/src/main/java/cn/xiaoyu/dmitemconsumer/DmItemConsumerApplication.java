@@ -8,8 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages = {"cn.xiaoyu.common.*"})
-@ComponentScan(basePackages = {"cn.xiaoyu.common.*"})
+@EnableFeignClients(basePackages = {"cn.xiaoyu.*"})
+@ComponentScan(basePackages = {"cn.xiaoyu.*"})
 public class DmItemConsumerApplication {
     public static void main(String[] args) {
         SpringApplication.run(DmItemConsumerApplication.class, args);
