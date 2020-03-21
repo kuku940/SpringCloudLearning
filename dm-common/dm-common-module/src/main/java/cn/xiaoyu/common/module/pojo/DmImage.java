@@ -1,11 +1,14 @@
 package cn.xiaoyu.common.module.pojo;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
 
 /***
  *   图片表
  */
+@Data
 public class DmImage implements Serializable {
     //
     private Long id;
@@ -23,69 +26,4 @@ public class DmImage implements Serializable {
     private Date createdTime;
     //更新时间
     private Date updatedTime;
-
-    //get set 方法
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
-    }
-
-    public String getImgUrl() {
-        return this.imgUrl;
-    }
-
-    public void setTargetId(Integer targetId) {
-        this.targetId = targetId;
-    }
-
-    public Integer getTargetId() {
-        return this.targetId;
-    }
-
-    public void setSort(Integer sort) {
-        this.sort = sort;
-    }
-
-    public Integer getSort() {
-        return this.sort;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
-    public Integer getType() {
-        return this.type;
-    }
-
-    public void setCategory(Integer category) {
-        this.category = category;
-    }
-
-    public Integer getCategory() {
-        return this.category;
-    }
-
-    public void setCreatedTime(Date createdTime) {
-        this.createdTime = createdTime;
-    }
-
-    public Date getCreatedTime() {
-        return this.createdTime;
-    }
-
-    public void setUpdatedTime(Date updatedTime) {
-        this.updatedTime = updatedTime;
-    }
-
-    public Date getUpdatedTime() {
-        return this.updatedTime;
-    }
 }

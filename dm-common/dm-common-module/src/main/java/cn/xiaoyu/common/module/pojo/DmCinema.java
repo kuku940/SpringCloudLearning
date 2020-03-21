@@ -1,11 +1,14 @@
 package cn.xiaoyu.common.module.pojo;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
 
 /***
  *   剧场表
  */
+@Data
 public class DmCinema implements Serializable {
     //
     private Long id;
@@ -29,93 +32,4 @@ public class DmCinema implements Serializable {
     private Date createdTime;
     //更新时间
     private Date updatedTime;
-
-    //get set 方法
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getAddress() {
-        return this.address;
-    }
-
-    public void setAreaId(Long areaId) {
-        this.areaId = areaId;
-    }
-
-    public Long getAreaId() {
-        return this.areaId;
-    }
-
-    public void setAreaName(String areaName) {
-        this.areaName = areaName;
-    }
-
-    public String getAreaName() {
-        return this.areaName;
-    }
-
-    public void setXLength(Integer xLength) {
-        this.xLength = xLength;
-    }
-
-    public Integer getXLength() {
-        return this.xLength;
-    }
-
-    public void setYLength(Integer yLength) {
-        this.yLength = yLength;
-    }
-
-    public Integer getYLength() {
-        return this.yLength;
-    }
-
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
-    }
-
-    public String getLatitude() {
-        return this.latitude;
-    }
-
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
-    }
-
-    public String getLongitude() {
-        return this.longitude;
-    }
-
-    public void setCreatedTime(Date createdTime) {
-        this.createdTime = createdTime;
-    }
-
-    public Date getCreatedTime() {
-        return this.createdTime;
-    }
-
-    public void setUpdatedTime(Date updatedTime) {
-        this.updatedTime = updatedTime;
-    }
-
-    public Date getUpdatedTime() {
-        return this.updatedTime;
-    }
 }
