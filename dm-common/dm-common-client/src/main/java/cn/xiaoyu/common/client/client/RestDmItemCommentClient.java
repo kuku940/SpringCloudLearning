@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(name = "dm-user-provider", configuration = DmConfiguration.class, fallback = DmItemCommentClientFallBack.class)
+@FeignClient(name = "dm-item-provider", configuration = DmConfiguration.class, fallback = DmItemCommentClientFallBack.class)
 public interface RestDmItemCommentClient {
     @PostMapping(value = "/getDmItemCommentById")
     DmItemComment getDmItemCommentById(@RequestParam("id") Long id);

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(name = "dm-item-provider", configuration = DmConfiguration.class, fallback = DmAreaClientFallBack.class)
+@FeignClient(name = "dm-base-provider", configuration = DmConfiguration.class, fallback = DmAreaClientFallBack.class)
 public interface RestDmAreaClient {
 
     @PostMapping(value = "/getDmAreaById")

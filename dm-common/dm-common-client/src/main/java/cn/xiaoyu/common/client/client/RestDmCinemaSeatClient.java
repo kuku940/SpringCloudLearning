@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(name = "dm-user-provider", configuration = DmConfiguration.class, fallback = DmCinemaSeatClientFallBack.class)
+@FeignClient(name = "dm-item-provider", configuration = DmConfiguration.class, fallback = DmCinemaSeatClientFallBack.class)
 public interface RestDmCinemaSeatClient {
     @PostMapping(value = "/getDmCinemaSeatById")
     DmCinemaSeat getDmCinemaSeatById(@RequestParam("id") Long id);

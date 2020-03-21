@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(name = "dm-scheduler-provider", configuration = DmConfiguration.class, fallback = DmTradeClientFallBack.class)
+@FeignClient(name = "dm-pay-provider", configuration = DmConfiguration.class, fallback = DmTradeClientFallBack.class)
 public interface RestDmTradeClient {
     @PostMapping(value = "/getDmTradeById")
     DmTrade getDmTradeById(@RequestParam("id") Long id);

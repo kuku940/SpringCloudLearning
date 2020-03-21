@@ -32,3 +32,9 @@
 * dm-item-consumer `9040`| dm-item-provider `9240`
 * dm-pay-consumer `9050`| dm-pay-provider `9250`
 * dm-scheduler-consumer `9060`| dm-scheduler-provider `9260`
+
+## 问题汇总
+
+### SpringBoot启动后无法找到对应的bean
+SpringBoot默认从启动类所在包开始，扫描当前包及其子包下的所有文件。
+Dao和Client等其他bean文件在其他目录下，需要配置相关的扫描路径。

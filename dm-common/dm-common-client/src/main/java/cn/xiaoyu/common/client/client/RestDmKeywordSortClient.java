@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(name = "dm-item-provider", configuration = DmConfiguration.class, fallback = DmKeywordSortClientFallBack.class)
+@FeignClient(name = "dm-base-provider", configuration = DmConfiguration.class, fallback = DmKeywordSortClientFallBack.class)
 public interface RestDmKeywordSortClient {
 
     @PostMapping(value = "/getDmKeywordSortById")
