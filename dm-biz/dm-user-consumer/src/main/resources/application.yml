@@ -3,12 +3,28 @@ server:
 spring:
   application:
     name: dm-user-consumer
+  # redis config
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout: 3000
   # zipkin config
   zipkin:
     base-url: http://localhost:7700
   sleuth:
     sampler:
       percentage: 1.0
+#  kafka:
+#    producer:
+#      retries: 0
+#      #batch-size: 16384 # 每次批量发送消息的数量
+#      bootstrap-servers: 192.168.9.151:9092
+#      buffer-memory: 33554432
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer # 指定消息key和消息体的编解码方式
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer #添加
+#    listener:
+#      poll-timeout: 10000
 eureka:
   instance:
     prefer-ip-address: true

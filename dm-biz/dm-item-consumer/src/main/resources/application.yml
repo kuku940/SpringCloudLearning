@@ -3,6 +3,12 @@ server:
 spring:
   application:
     name: dm-item-consumer
+  # redis config
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout: 3000
   aop:
     proxy-target-class: true
 eureka:

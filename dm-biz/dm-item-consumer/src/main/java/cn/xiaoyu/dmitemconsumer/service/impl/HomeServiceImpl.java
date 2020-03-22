@@ -71,16 +71,19 @@ public class HomeServiceImpl implements HomeService {
         List<DmImage> dmImageList = null;
         //从reidis中获取图片信息
         String key = Constants.IMAGE_TOKEN_PREFIX + id + "_" + type + "_" + category;
-//        String imgUrl = (String) redisUtils.get(key);
-//        //如果redis中没有,则到数据库中获取
-//        if (EmptyUtils.isEmpty(imgUrl)) {
-//            dmImageList = restDmImageClient.queryDmImageList(id, type, category);
-//            imgUrl = dmImageList.get(0).getImgUrl();
-//            //同步图片到redis
-//            redisUtils.set(key, imgUrl);
-//        }
-//        return imgUrl;
-        return key;
+        String imgUrl = (String) redisUtils.get(key);
+        //如果redis中没有,则到数据库中获取
+        if (EmptyUtils.isEmpty(imgUrl)) {
+            dmImageList = restDmImageClient.queryDmImageList(id, type, category);
+            if (dmImageList.isEmpty()) {
+                imgUrl = "default.img";
+            } else {
+                imgUrl = dmImageList.get(0).getImgUrl();
+            }
+            //同步图片到redis
+            redisUtils.set(key, imgUrl);
+        }
+        return imgUrl;
     }
 
     /**

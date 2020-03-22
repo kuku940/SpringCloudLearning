@@ -10,11 +10,6 @@ import java.util.Map;
 @Component
 public class DmUserClientFallBack implements RestDmUserClient {
     @Override
-    public DmUser checkLoginByPassword(DmUser dmUser) {
-        return null;
-    }
-
-    @Override
     public DmUser getDmUserById(Long id) {
         return null;
     }
@@ -46,6 +41,11 @@ public class DmUserClientFallBack implements RestDmUserClient {
 
     @Override
     public Long createDmUser(DmUser dmUser) {
+        return null;
+    }
+
+    @Override
+    public DmUser checkLoginByPassword(DmUser dmUser) {
         return null;
     }
 

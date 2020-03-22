@@ -18,4 +18,6 @@ public interface DmUserMapper {
     Integer insertDmUser(DmUser dmUser);
 
     Integer updateDmUser(DmUser dmUser);
+
+    DmUser checkLoginByPassword(@Param(value = "phone") String phone, @Param(value = "password") String password);
 }

@@ -5,18 +5,13 @@ import cn.xiaoyu.common.client.config.DmConfiguration;
 import cn.xiaoyu.common.client.fallback.DmUserClientFallBack;
 import cn.xiaoyu.common.module.pojo.DmUser;
 import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
 
 @FeignClient(name = "dm-user-provider", configuration = DmConfiguration.class, fallback = DmUserClientFallBack.class)
 public interface RestDmUserClient {
-    @PostMapping(value = "/checkLoginByPassword")
-    DmUser checkLoginByPassword(@RequestBody DmUser dmUser);
-
     @PostMapping(value = "/getDmUserById")
     DmUser getDmUserById(@RequestParam("id") Long id);
 
@@ -37,6 +32,9 @@ public interface RestDmUserClient {
 
     @PostMapping(value = "/createuser")
     Long createDmUser(@RequestBody DmUser dmUser);
+
+    @PostMapping(value = "/checkLoginByPassword")
+    DmUser checkLoginByPassword(@RequestBody DmUser dmUser);
 
     @PostMapping(value = "/generateToken")
     String generateToken(@RequestBody DmUser dmUser);
