@@ -95,7 +95,8 @@
         </trim>
     </select>
 
-    <insert id="insertDmScheduler" parameterType="cn.xiaoyu.common.module.pojo.DmScheduler">
+    <insert id="insertDmScheduler" parameterType="cn.xiaoyu.common.module.pojo.DmScheduler" useGeneratedKeys="true"
+            keyProperty="id">
         insert into dm_scheduler(
                         title,
                         startTime,

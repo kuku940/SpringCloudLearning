@@ -95,7 +95,8 @@
         </trim>
     </select>
 
-    <insert id="insertDmItemType" parameterType="cn.xiaoyu.common.module.pojo.DmItemType">
+    <insert id="insertDmItemType" parameterType="cn.xiaoyu.common.module.pojo.DmItemType" useGeneratedKeys="true"
+            keyProperty="id">
         insert into dm_item_type(
                         itemType,
                         level,

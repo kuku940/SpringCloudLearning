@@ -103,7 +103,8 @@
         </trim>
     </select>
 
-    <insert id="insertDmOrderLinkUser" parameterType="cn.xiaoyu.common.module.pojo.DmOrderLinkUser">
+    <insert id="insertDmOrderLinkUser" parameterType="cn.xiaoyu.common.module.pojo.DmOrderLinkUser"
+            useGeneratedKeys="true" keyProperty="id">
         insert into dm_order_link_user(
                         orderId,
                         linkUserId,

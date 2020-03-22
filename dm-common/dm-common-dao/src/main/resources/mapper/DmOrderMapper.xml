@@ -206,7 +206,8 @@
         </trim>
     </select>
 
-    <insert id="insertDmOrder" parameterType="cn.xiaoyu.common.module.pojo.DmOrder">
+    <insert id="insertDmOrder" parameterType="cn.xiaoyu.common.module.pojo.DmOrder" useGeneratedKeys="true"
+            keyProperty="id">
         insert into dm_order(
                         orderNo,
                         userId,

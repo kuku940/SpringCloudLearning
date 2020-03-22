@@ -86,7 +86,8 @@
         </trim>
     </select>
 
-    <insert id="insertDmArea" parameterType="cn.xiaoyu.common.module.pojo.DmArea">
+    <insert id="insertDmArea" parameterType="cn.xiaoyu.common.module.pojo.DmArea" useGeneratedKeys="true"
+            keyProperty="id">
         insert into dm_area(
                         name,
                         parent,

@@ -87,7 +87,8 @@
         </trim>
     </select>
 
-    <insert id="insertDmLinkUser" parameterType="cn.xiaoyu.common.module.pojo.DmLinkUser">
+    <insert id="insertDmLinkUser" parameterType="cn.xiaoyu.common.module.pojo.DmLinkUser" useGeneratedKeys="true"
+            keyProperty="id">
         insert into dm_link_user(
                         userId,
                         name,

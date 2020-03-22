@@ -119,7 +119,7 @@
         </trim>
     </select>
 
-    <insert id="insertDmSchedulerSeat" parameterType="cn.xiaoyu.common.module.pojo.DmSchedulerSeat">
+    <insert id="insertDmSchedulerSeat" parameterType="cn.xiaoyu.common.module.pojo.DmSchedulerSeat" useGeneratedKeys="true" keyProperty="id">
         insert into dm_scheduler_seat(
                         x,
                         y,
@@ -159,10 +159,10 @@
             <if test="scheduleId != null and scheduleId!=''">
                 scheduleId=#{scheduleId},
             </if>
-            <if test="orderNo != null and orderNo!=''">
+            <if test="orderNo!=''">
                 orderNo=#{orderNo},
             </if>
-            <if test="userId != null and userId!=''">
+            <if test="userId!=''">
                 userId=#{userId},
             </if>
             <if test="status != null and status!=''">

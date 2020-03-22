@@ -22,6 +22,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 
 import java.io.IOException;
 import java.util.Date;
@@ -105,6 +106,7 @@ public class OrderServiceImpl implements OrderService {
         Long orderID = 0L;
         try {
             orderID = restDmOrderClient.qdtxAddDmOrder(dmOrder);
+            Assert.notNull(orderID, "OrderId is Null!");
         } catch (Exception e) {
             logger.error("add Order Id Error", e);
             //创建订单失败，重置之前的订单座位信息
@@ -221,7 +223,7 @@ public class OrderServiceImpl implements OrderService {
             try {
                 channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, false);
             } catch (IOException e1) {
-                logger.error("Basic Nack", e1);
+                logger.error("Basic Nack Error", e1);
             }
         }
     }
@@ -238,7 +240,7 @@ public class OrderServiceImpl implements OrderService {
             try {
                 channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, false);
             } catch (IOException e1) {
-                logger.error("Basic Nack", e1);
+                logger.error("Basic Nack Error", e1);
             }
         }
     }
@@ -255,7 +257,7 @@ public class OrderServiceImpl implements OrderService {
             try {
                 channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, false);
             } catch (IOException e1) {
-                logger.error("Basic Nack", e1);
+                logger.error("Basic Nack Error", e1);
             }
         }
     }

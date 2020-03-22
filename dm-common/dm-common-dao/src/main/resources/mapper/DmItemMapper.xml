@@ -230,7 +230,8 @@
         </trim>
     </select>
 
-    <insert id="insertDmItem" parameterType="cn.xiaoyu.common.module.pojo.DmItem">
+    <insert id="insertDmItem" parameterType="cn.xiaoyu.common.module.pojo.DmItem" useGeneratedKeys="true"
+            keyProperty="id">
         insert into dm_item(
                         itemName,
                         abstractMessage,

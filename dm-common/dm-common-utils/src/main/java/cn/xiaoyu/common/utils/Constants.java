@@ -61,9 +61,7 @@ public class Constants {
     public static class QueueName {
         public static final String TO_QG_QUEUE = "toQgQueue";
         public static final String TO_CREATE_ORDER = "toCreateOrder";
-
         public static final String TO_UPDATED_ORDER_QUEUE = "toUpdateOrderQueue";
-
         public static final String TO_UPDATED_GOODS_QUQUE = "toUpdateGoodsQueue";
     }
 
@@ -81,7 +79,6 @@ public class Constants {
     }
 
     //状态(0:锁定库存,1:成功支付,2:支付超时)
-
     public static class QgStatus {
         public static final String FAIL = "-1";//拿到商品
         public static final String GET_GOODS = "1";//拿到商品
@@ -94,6 +91,7 @@ public class Constants {
         public static final String DDZFYC = "4002";
         public static final String DDYXYC = "4003";
     }
+
 
     public static final String USER_TOKEN_PREFIX = "userToken:";
     public static final String IMAGE_TOKEN_PREFIX = "imageCache:";
@@ -140,4 +138,8 @@ public class Constants {
         public static final int WEIXIN = 1;
         public static final int ZHIFUBAO = 2;
     }
+
+    public static final String DEAD_LETTER_EXCHANGE = "deadLetterExchange"; //死信关联的Exchange的名称
+    public static final String DEAD_LETTER_ROUTINKEY = "deadRoutingKey";    //与上述Exchange绑定时需要的routingkey
+    public static final String DEAD_QUEUE = "dead.queue";   //与上述Exchange绑定时需要的routingkey
 }

@@ -17,7 +17,7 @@
         updatedTime as updatedTime
         from dm_cinema_seat
         <trim prefix="where" prefixOverrides="and | or">
-        <if test="id != null">
+            <if test="id != null">
                 and id=#{id}
             </if>
         </trim>
@@ -103,7 +103,8 @@
         </trim>
     </select>
 
-    <insert id="insertDmCinemaSeat" parameterType="cn.xiaoyu.common.module.pojo.DmCinemaSeat">
+    <insert id="insertDmCinemaSeat" parameterType="cn.xiaoyu.common.module.pojo.DmCinemaSeat" useGeneratedKeys="true"
+            keyProperty="id">
         insert into dm_cinema_seat(
                         x,
                         y,

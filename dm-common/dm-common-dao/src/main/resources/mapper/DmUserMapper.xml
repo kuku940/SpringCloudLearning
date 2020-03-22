@@ -126,7 +126,8 @@
         </trim>
     </select>
 
-    <insert id="insertDmUser" parameterType="cn.xiaoyu.common.module.pojo.DmUser">
+    <insert id="insertDmUser" parameterType="cn.xiaoyu.common.module.pojo.DmUser" useGeneratedKeys="true"
+            keyProperty="id">
         insert into dm_user(
                         phone,
                         password,

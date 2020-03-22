@@ -87,7 +87,8 @@
         </trim>
     </select>
 
-    <insert id="insertDmItemComment" parameterType="cn.xiaoyu.common.module.pojo.DmItemComment">
+    <insert id="insertDmItemComment" parameterType="cn.xiaoyu.common.module.pojo.DmItemComment" useGeneratedKeys="true"
+            keyProperty="id">
         insert into dm_item_comment(
                         itemId,
                         userId,

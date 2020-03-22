@@ -118,7 +118,8 @@
         </trim>
     </select>
 
-    <insert id="insertDmCinema" parameterType="cn.xiaoyu.common.module.pojo.DmCinema">
+    <insert id="insertDmCinema" parameterType="cn.xiaoyu.common.module.pojo.DmCinema" useGeneratedKeys="true"
+            keyProperty="id">
         insert into dm_cinema(
                         name,
                         address,

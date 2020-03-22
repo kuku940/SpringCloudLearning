@@ -71,7 +71,8 @@
         </trim>
     </select>
 
-    <insert id="insertDmKeywordSort" parameterType="cn.xiaoyu.common.module.pojo.DmKeywordSort">
+    <insert id="insertDmKeywordSort" parameterType="cn.xiaoyu.common.module.pojo.DmKeywordSort" useGeneratedKeys="true"
+            keyProperty="id">
         insert into dm_keyword_sort(
                         keyword,
                         count,

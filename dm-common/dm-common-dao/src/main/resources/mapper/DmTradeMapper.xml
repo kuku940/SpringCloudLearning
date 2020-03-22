@@ -86,7 +86,8 @@
         </trim>
     </select>
 
-    <insert id="insertDmTrade" parameterType="cn.xiaoyu.common.module.pojo.DmTrade">
+    <insert id="insertDmTrade" parameterType="cn.xiaoyu.common.module.pojo.DmTrade" useGeneratedKeys="true"
+            keyProperty="id">
         insert into dm_trade(
                         orderNo,
                         tradeNo,

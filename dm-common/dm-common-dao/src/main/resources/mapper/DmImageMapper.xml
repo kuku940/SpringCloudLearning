@@ -94,7 +94,8 @@
         </trim>
     </select>
 
-    <insert id="insertDmImage" parameterType="cn.xiaoyu.common.module.pojo.DmImage">
+    <insert id="insertDmImage" parameterType="cn.xiaoyu.common.module.pojo.DmImage" useGeneratedKeys="true"
+            keyProperty="id">
         insert into dm_image(
                         imgUrl,
                         targetId,

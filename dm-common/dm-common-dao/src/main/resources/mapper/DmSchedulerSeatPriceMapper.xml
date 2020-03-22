@@ -87,7 +87,8 @@
         </trim>
     </select>
 
-    <insert id="insertDmSchedulerSeatPrice" parameterType="cn.xiaoyu.common.module.pojo.DmSchedulerSeatPrice">
+    <insert id="insertDmSchedulerSeatPrice" parameterType="cn.xiaoyu.common.module.pojo.DmSchedulerSeatPrice"
+            useGeneratedKeys="true" keyProperty="id">
         insert into dm_scheduler_seat_price(
                         price,
                         areaLevel,
