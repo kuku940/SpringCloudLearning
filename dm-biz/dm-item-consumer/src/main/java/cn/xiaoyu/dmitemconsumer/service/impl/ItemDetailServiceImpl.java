@@ -32,6 +32,8 @@ public class ItemDetailServiceImpl implements ItemDetailService {
     @Autowired
     private RestDmSchedulerClient restDmSchedulerClient;
     @Autowired
+    private RestDmSchedulerSeatClient restDmSchedulerSeatClient;
+    @Autowired
     private RestDmSchedulerSeatPriceClient restDmSchedulerSeatPriceClient;
     @Autowired
     private RestDmItemCommentClient restDmItemCommentClient;
@@ -78,6 +80,7 @@ public class ItemDetailServiceImpl implements ItemDetailService {
             ItemSchedulerVo itemSchedulerVo = new ItemSchedulerVo();
             BeanUtils.copyProperties(dmItem, itemSchedulerVo);
             BeanUtils.copyProperties(dmScheduler, itemSchedulerVo);
+            // 更新显示字段-时间字段
             itemSchedulerVo.setStartTime(DateUtil.format(dmScheduler.getStartTime()));
             itemSchedulerVo.setEndTime(DateUtil.format(dmScheduler.getEndTime()));
             resultList.add(itemSchedulerVo);
@@ -102,7 +105,8 @@ public class ItemDetailServiceImpl implements ItemDetailService {
             //先查询出所有是有效座位且没有被锁定的座位数量
             Map<String, Object> lockMap = new HashMap<>();
             lockMap.put("status", 1);
-            int lockNum = restDmSchedulerClient.getDmSchedulerCountByMap(lockMap);
+            lockMap.put("scheduleId", itemPriceVo.getScheduleId());
+            int lockNum = restDmSchedulerSeatClient.getDmSchedulerSeatCountByMap(lockMap);
             //对应的区域如果预定状态的座位数量少于总数代表还有座位
             int isHaveSeat = lockNum > 0 ? 1 : 0;
             itemPriceVo.setIsHaveSeat(isHaveSeat);
