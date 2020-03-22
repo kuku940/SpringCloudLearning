@@ -23,10 +23,10 @@ public interface RestDmOrderClient {
     Integer getDmOrderCountByMap(@RequestParam Map<String, Object> param);
 
     @PostMapping(value = "/qdtxAddDmOrder")
-    Integer qdtxAddDmOrder(@RequestBody DmOrder dmOrder);
+    Long qdtxAddDmOrder(@RequestBody DmOrder dmOrder);
 
     @PostMapping(value = "/qdtxModifyDmOrder")
-    Integer qdtxModifyDmOrder(@RequestBody DmOrder dmOrder);
+    Long qdtxModifyDmOrder(@RequestBody DmOrder dmOrder);
 
     @PostMapping(value = "/getDmOrderListByOrderNoOrDate")
     List<DmOrder> getDmOrderListByOrderNoOrDate(@RequestBody Map<String, Object> param);

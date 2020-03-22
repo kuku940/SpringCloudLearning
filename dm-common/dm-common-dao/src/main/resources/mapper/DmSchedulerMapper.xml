@@ -53,10 +53,10 @@
             <if test="cinemaId != null and cinemaId!=''">
                 and cinemaId=#{cinemaId}
             </if>
-            <if test="createdTime != null and createdTime!=''">
+            <if test="createdTime != null">
                 and createdTime=#{createdTime}
             </if>
-            <if test="updatedTime != null and updatedTime!=''">
+            <if test="updatedTime != null">
                 and updatedTime=#{updatedTime}
             </if>
         </trim>
@@ -86,10 +86,10 @@
             <if test="cinemaId != null and cinemaId!=''">
                 and cinemaId=#{cinemaId}
             </if>
-            <if test="createdTime != null and createdTime!=''">
+            <if test="createdTime != null">
                 and createdTime=#{createdTime}
             </if>
-            <if test="updatedTime != null and updatedTime!=''">
+            <if test="updatedTime != null">
                 and updatedTime=#{updatedTime}
             </if>
         </trim>
@@ -132,10 +132,10 @@
             <if test="cinemaId != null and cinemaId!=''">
                 cinemaId=#{cinemaId},
             </if>
-            <if test="createdTime != null and createdTime!=''">
+            <if test="createdTime != null">
                 createdTime=#{createdTime},
             </if>
-            <if test="updatedTime != null and updatedTime!=''">
+            <if test="updatedTime != null">
                 updatedTime=#{updatedTime}
             </if>
         </trim>

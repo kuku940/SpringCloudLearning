@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: dm-order-provider
+  aop:
+    proxy-target-class: true
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/dm_order?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
     username: root

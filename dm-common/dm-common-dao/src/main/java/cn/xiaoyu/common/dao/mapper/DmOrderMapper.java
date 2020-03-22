@@ -25,4 +25,6 @@ public interface DmOrderMapper {
     Integer flushCancelOrderType();
 
     List<DmOrder> getDmOrderByOrderTypeAndTime();
+
+    Integer deleteDmOrderById(@Param(value = "id") Long id);
 }

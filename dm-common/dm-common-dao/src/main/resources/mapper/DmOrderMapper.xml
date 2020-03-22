@@ -122,10 +122,10 @@
             <if test="insuranceAmount != null and insuranceAmount!=''">
                 and insuranceAmount=#{insuranceAmount}
             </if>
-            <if test="createdTime != null and createdTime!=''">
+            <if test="createdTime != null">
                 and createdTime=#{createdTime}
             </if>
-            <if test="updatedTime != null and updatedTime!=''">
+            <if test="updatedTime != null">
                 and updatedTime=#{updatedTime}
             </if>
         </trim>
@@ -197,10 +197,10 @@
             <if test="insuranceAmount != null and insuranceAmount!=''">
                 and insuranceAmount=#{insuranceAmount}
             </if>
-            <if test="createdTime != null and createdTime!=''">
+            <if test="createdTime != null">
                 and createdTime=#{createdTime}
             </if>
-            <if test="updatedTime != null and updatedTime!=''">
+            <if test="updatedTime != null">
                 and updatedTime=#{updatedTime}
             </if>
         </trim>
@@ -313,10 +313,10 @@
             <if test="insuranceAmount != null and insuranceAmount!=''">
                 insuranceAmount=#{insuranceAmount},
             </if>
-            <if test="createdTime != null and createdTime!=''">
+            <if test="createdTime != null">
                 createdTime=#{createdTime},
             </if>
-            <if test="updatedTime != null and updatedTime!=''">
+            <if test="updatedTime != null">
                 updatedTime=#{updatedTime}
             </if>
         </trim>
@@ -403,4 +403,8 @@
         from dm_order
         where orderType=-1 and timestampdiff(SECOND, createdTime, NOW()) >= 2 * 3600
     </select>
+
+    <delete id="deleteDmOrderById" parameterType="long">
+        DELETE FROM  dm_order WHERE id=#{id}
+    </delete>
 </mapper>

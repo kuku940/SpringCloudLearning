@@ -67,10 +67,10 @@
             <if test="longitude != null and longitude!=''">
                 and longitude=#{longitude}
             </if>
-            <if test="createdTime != null and createdTime!=''">
+            <if test="createdTime != null">
                 and createdTime=#{createdTime}
             </if>
-            <if test="updatedTime != null and updatedTime!=''">
+            <if test="updatedTime != null">
                 and updatedTime=#{updatedTime}
             </if>
         </trim>
@@ -109,10 +109,10 @@
             <if test="longitude != null and longitude!=''">
                 and longitude=#{longitude}
             </if>
-            <if test="createdTime != null and createdTime!=''">
+            <if test="createdTime != null">
                 and createdTime=#{createdTime}
             </if>
-            <if test="updatedTime != null and updatedTime!=''">
+            <if test="updatedTime != null">
                 and updatedTime=#{updatedTime}
             </if>
         </trim>
@@ -170,10 +170,10 @@
             <if test="longitude != null and longitude!=''">
                 longitude=#{longitude},
             </if>
-            <if test="createdTime != null and createdTime!=''">
+            <if test="createdTime != null">
                 createdTime=#{createdTime},
             </if>
-            <if test="updatedTime != null and updatedTime!=''">
+            <if test="updatedTime != null">
                 updatedTime=#{updatedTime}
             </if>
         </trim>

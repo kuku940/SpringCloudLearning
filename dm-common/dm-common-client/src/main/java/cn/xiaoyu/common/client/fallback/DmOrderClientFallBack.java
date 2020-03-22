@@ -26,12 +26,12 @@ public class DmOrderClientFallBack implements RestDmOrderClient {
     }
 
     @Override
-    public Integer qdtxAddDmOrder(DmOrder dmOrder) {
+    public Long qdtxAddDmOrder(DmOrder dmOrder) {
         return null;
     }
 
     @Override
-    public Integer qdtxModifyDmOrder(DmOrder dmOrder) {
+    public Long qdtxModifyDmOrder(DmOrder dmOrder) {
         return null;
     }
 

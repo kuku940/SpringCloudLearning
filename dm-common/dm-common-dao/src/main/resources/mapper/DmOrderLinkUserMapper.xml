@@ -58,10 +58,10 @@
             <if test="price != null and price!=''">
                 and price=#{price}
             </if>
-            <if test="createdTime != null and createdTime!=''">
+            <if test="createdTime != null">
                 and createdTime=#{createdTime}
             </if>
-            <if test="updatedTime != null and updatedTime!=''">
+            <if test="updatedTime != null">
                 and updatedTime=#{updatedTime}
             </if>
         </trim>
@@ -94,10 +94,10 @@
             <if test="price != null and price!=''">
                 and price=#{price}
             </if>
-            <if test="createdTime != null and createdTime!=''">
+            <if test="createdTime != null">
                 and createdTime=#{createdTime}
             </if>
-            <if test="updatedTime != null and updatedTime!=''">
+            <if test="updatedTime != null">
                 and updatedTime=#{updatedTime}
             </if>
         </trim>
@@ -145,12 +145,16 @@
             <if test="price != null and price!=''">
                 price=#{price},
             </if>
-            <if test="createdTime != null and createdTime!=''">
+            <if test="createdTime != null">
                 createdTime=#{createdTime},
             </if>
-            <if test="updatedTime != null and updatedTime!=''">
+            <if test="updatedTime != null">
                 updatedTime=#{updatedTime}
             </if>
         </trim>
     </update>
+
+    <delete id="deleteDmOrderLinkUserByOrderId" parameterType="long">
+        DELETE  FROM  dm_order_link_user WHERE orderId=#{orderId}
+    </delete>
 </mapper>

@@ -52,10 +52,10 @@
             <if test="category != null and category!=''">
                 and category=#{category}
             </if>
-            <if test="createdTime != null and createdTime!=''">
+            <if test="createdTime != null">
                 and createdTime=#{createdTime}
             </if>
-            <if test="updatedTime != null and updatedTime!=''">
+            <if test="updatedTime != null">
                 and updatedTime=#{updatedTime}
             </if>
         </trim>
@@ -85,10 +85,10 @@
             <if test="category != null and category!=''">
                 and category=#{category}
             </if>
-            <if test="createdTime != null and createdTime!=''">
+            <if test="createdTime != null">
                 and createdTime=#{createdTime}
             </if>
-            <if test="updatedTime != null and updatedTime!=''">
+            <if test="updatedTime != null">
                 and updatedTime=#{updatedTime}
             </if>
         </trim>
@@ -131,10 +131,10 @@
             <if test="category != null and category!=''">
                 category=#{category},
             </if>
-            <if test="createdTime != null and createdTime!=''">
+            <if test="createdTime != null">
                 createdTime=#{createdTime},
             </if>
-            <if test="updatedTime != null and updatedTime!=''">
+            <if test="updatedTime != null">
                 updatedTime=#{updatedTime}
             </if>
         </trim>

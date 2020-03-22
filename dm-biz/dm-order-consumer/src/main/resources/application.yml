@@ -3,6 +3,9 @@ server:
 spring:
   application:
     name: dm-order-consumer
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
 eureka:
   instance:
     prefer-ip-address: true

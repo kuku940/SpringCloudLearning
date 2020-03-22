@@ -19,4 +19,6 @@ public interface DmOrderLinkUserMapper {
     Integer insertDmOrderLinkUser(DmOrderLinkUser dmOrderLinkUser);
 
     Integer updateDmOrderLinkUser(DmOrderLinkUser dmOrderLinkUser);
+
+    Integer deleteDmOrderLinkUserByOrderId(@Param(value = "orderId") Long orderId);
 }
