@@ -3,6 +3,12 @@ server:
 spring:
   application:
     name: dm-base-consumer
+  # zipkin config
+  zipkin:
+    base-url: http://localhost:7700
+  sleuth:
+    sampler:
+      percentage: 1.0
 eureka:
   instance:
     prefer-ip-address: true

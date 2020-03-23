@@ -11,6 +11,12 @@ spring:
     timeout: 3000
   aop:
     proxy-target-class: true
+  # zipkin config
+  zipkin:
+    base-url: http://localhost:7700
+  sleuth:
+    sampler:
+      percentage: 1.0
 eureka:
   instance:
     prefer-ip-address: true
