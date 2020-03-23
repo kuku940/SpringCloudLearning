@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "c7f05190-7d55-4f6e-92cd-a48da4095dd7",
+		"name": "dm",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "dm-gateway-zuul/dev",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:7900/dm-gateway-zuul/dev"
+			},
+			"response": []
+		},
+		{
+			"name": "queryItemScheduler",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"itemId\": 8\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9040/api/p/queryItemScheduler"
+			},
+			"response": []
+		},
+		{
+			"name": "queryBanner",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:9040/api/p/index/queryBanner"
+			},
+			"response": []
+		},
+		{
+			"name": "queryItemPrice",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"scheduleId\": 12707\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9040/api/p/queryItemPrice"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"phone\": \"772602194@qq.com\",\n\t\"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9020/api/p/login"
+			},
+			"response": []
+		},
+		{
+			"name": "queryLinkUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "token-PC--422fb9f5a0b49816ef8ef0433ab987bc-20200322191715-15cfff",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:9020/api/v/queryLinkUser"
+			},
+			"response": []
+		},
+		{
+			"name": "createOrderByZuul",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "token-PC--7bd30873c29e674a5a61634e38480939-20200323213734-61171c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userId\": 9,\n\t\"schedulerId\": 12711,\n\t\"itemId\": 9,\n\t\"cinemaId\": 1,\n\t\"sourceType\": 0,\n\t\"isNeedInvoice\": 1,\n\t\"linkIds\": \"61,71\",\n\t\"invoiceType\": 1,\n\t\"invoiceHead\": \"去哪儿网\",\n\t\"invoiceNo\": \"12334567899\",\n\t\"isNeedInsurance\": 1,\n\t\"seatPositions\": \"2_5,2_6\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8080/order/api/v/createOrder"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
