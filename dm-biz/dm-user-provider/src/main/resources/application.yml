@@ -5,9 +5,12 @@ spring:
     name: dm-user-provider
   aop:
     proxy-target-class: true
-  # zipkin config
-  zipkin:
-    base-url: http://localhost:7800
+  # zipkin config - http type replace by rabbitmq
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
   sleuth:
     sampler:
       percentage: 1.0

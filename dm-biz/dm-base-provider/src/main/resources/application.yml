@@ -11,8 +11,11 @@ spring:
     password: 123456
     driver-class-name: org.gjt.mm.mysql.Driver
   # zipkin config
-  zipkin:
-    base-url: http://localhost:7800
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
   sleuth:
     sampler:
       percentage: 1.0

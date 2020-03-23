@@ -7,10 +7,13 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/kuku940/SpringCloudLearning.git
-          username: ${github.username}
+          # clone springcloudlearning slow, so create new resp springcloudconfig for it
+          # uri: https://github.com/kuku940/SpringCloudLearning.git
+          # search-paths: /dm-env/dm-config-server/src/main/resources/config/
+          uri: https://github.com/kuku940/springcloudconfig.git
+          search-paths: /
           password: ${github.password}
-          search-paths: /dm-env/dm-config-server/src/main/resources/config/
+          username: ${github.username}
           #default-label: master
 eureka:
   instance:
