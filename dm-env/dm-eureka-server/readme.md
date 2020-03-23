@@ -30,3 +30,23 @@ security:
 
 以上完成访问加密，通过[http://localhost:7776/](http://localhost:7776/)访问会要求密码，
 可以通过[http://root:123456@localhost:7776/](http://root:123456@localhost:7776/)访问。
+
+### eureka注册的服务注销慢
+当一个服务关闭时，其在eureka上的节点还会依然存在很久。可以通过如下配置保证服务快速注销
+
+配置eureka服务端[application.yml](./src/main/resources/application.yml),
+关闭自我保护（生产环境要开启自我保护）以及提高刷新时间为2秒，默认90秒注销。
+```yaml
+eureka:
+  server:
+    enable-self-preservation: false
+    evication-interval-timer-in-ms: 2000
+```
+
+配置客户端yml文件
+```yaml
+eureka:
+  instance: 
+    lease-expiration-duration-in-seconds: 2
+    lease-renewal-interval-in-seconds: 2
+``` 
