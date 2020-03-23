@@ -9,10 +9,12 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
  * 前置过滤器 - 登录过滤 已关闭，详见配置文件
+ *
  * @RefreshScope 重新注入属性token
  */
 @Component
@@ -47,9 +49,12 @@ public class PreFilter extends ZuulFilter {
     @Override
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
+        HttpServletRequest request = ctx.getRequest();
+        String userToken = request.getHeader("token");
 
-        logger.info("ReadFromConfigServer, token: {}", token);
-        if (token) {
+        logger.info("ReadFromConfigServer, token: {}", this.token);
+        logger.info("Request Header Token: {}", userToken);
+        if (this.token) {
             ctx.setSendZuulResponse(false);
             ctx.setResponseStatusCode(HttpServletResponse.SC_UNAUTHORIZED);
             ctx.setResponseBody("{\"msg\": \"401, access without premission, please login!\"}");

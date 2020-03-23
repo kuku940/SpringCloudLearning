@@ -1,4 +1,11 @@
 # spring.application.name moved to boostrap.yml file
+spring:
+  # zipkin config
+  zipkin:
+    base-url: http://localhost:7800
+  sleuth:
+    sampler:
+      percentage: 1.0
 server:
   port: 8080
 eureka:
@@ -11,6 +18,11 @@ eureka:
       defaultZone: http://root:123456@localhost:7776/eureka/
 zuul:
   routes:
+    dm-base-consumer: /base/**
+    dm-item-consumer: /item/**
+    dm-order-consumer: /order/**
+    dm-pay-consumer: /pay/**
+    dm-scheduler-consumer: /scheduler/**
     dm-user-consumer: /user/**
   LogFilter:  # make LogFilter unavailable
     pre:

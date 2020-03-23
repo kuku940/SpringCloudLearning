@@ -11,7 +11,7 @@ spring:
     timeout: 3000
   # zipkin config
   zipkin:
-    base-url: http://localhost:7700
+    base-url: http://localhost:7800
   sleuth:
     sampler:
       percentage: 1.0

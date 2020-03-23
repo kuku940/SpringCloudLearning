@@ -5,17 +5,17 @@ spring:
     name: dm-user-provider
   aop:
     proxy-target-class: true
+  # zipkin config
+  zipkin:
+    base-url: http://localhost:7800
+  sleuth:
+    sampler:
+      percentage: 1.0
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/dm_user?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
     username: root
     password: 123456
     driver-class-name: org.gjt.mm.mysql.Driver
-  # zipkin config
-  zipkin:
-    base-url: http://localhost:7700
-  sleuth:
-    sampler:
-      percentage: 1.0
 eureka:
   instance:
     prefer-ip-address: true
