@@ -30,6 +30,28 @@ hystrix:
           enabled: false
 ```
 
+第三种：启动时就加载
+```yaml
+ribbon:
+  eager-load: 
+    enabled: true
+
+zuul:
+  ribbon: 
+    eager-load: 
+      enabled: true
+```
+
+### 超时配置
+```yaml
+ribbon:
+  ConnectTimeout: 1000  # 连接超时
+  ReadTimeout: 1000 # 响应超时
+  OkToRetryOnAllOperations: true # 是否发起重试
+  MaxAutoRetries: 1 # 当前机器重试1次
+  MaxAutoRetriesNextServer: 1 # 当前服务的其他的机器重试1次
+```
+
 ### 自动刷新配置ConfigBus
 
 
